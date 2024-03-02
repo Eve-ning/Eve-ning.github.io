@@ -1,18 +1,19 @@
 <script lang="ts">
-  export let title: string
-  export let half = false
-
-  let size = half ? 'py-10' : 'min-h-screen'
+    export let title: string;
 </script>
-<div class="hero {size} bg-base-200">
-  <div class="hero-content text-center">
-    <div class="max-w-md">
-      <h1 class="text-5xl font-bold">{title}</h1>
-      <div class="py-6">
-        <slot name="pre" />
-      </div>
-      <div class="divider"></div>
-      <slot name="post" />
+<div
+        class="hero py-10  bg-[conic-gradient(at_bottom,_var(--tw-gradient-stops))] from-slate-900 via-purple-950 to-slate-900">
+    <div class="hero-content text-center">
+        <div class="max-w-screen-lg">
+            <div class="shadow-sm shadow-purple-400 rounded-2xl p-10">
+                <h1 class="text-4xl font-bold">{title}</h1>
+                <div class="py-2">
+                    <slot name="pre"/>
+                </div>
+
+                <div class="divider"/>
+                <slot name="post"/>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

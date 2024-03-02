@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {CustomMarkdownInput} from '../plugins/MarkdownInputCustomPreview'
 
 export default defineType({
   name: 'blogPost',
@@ -8,7 +9,7 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string'
+      type: 'string',
     }),
     defineField({
       name: 'slug',
@@ -17,30 +18,25 @@ export default defineType({
       validation: (Rule) => Rule.required(),
       options: {
         source: 'title',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     }),
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
-      rows: 4
+      rows: 4,
     }),
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'markdown'
-    })
+      type: 'markdown',
+      components: {input: CustomMarkdownInput},
+    }),
   ],
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
-      media: 'mainImage'
     },
-    prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
-    }
-  }
+  },
 })

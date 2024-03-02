@@ -5,9 +5,9 @@
 </script>
 
 <div class="container max-w-full p-0 m-0 dark:bg-stone-950">
-  <TopNav />
-  <main>
-    <slot />
-  </main>
-  <Footer />
+    <TopNav/>
+    <main>
+        <slot/>
+    </main>
+    <Footer/>
 </div>

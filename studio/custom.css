@@ -1,0 +1,15 @@
+div[class^="TagsInput-module_menu"] {
+    z-index: 5 !important;
+}
+
+div[data-ui="ListPane"], div[data-ui="DocumentListPane"] {
+    margin: 0;
+    min-width: 10em !important;
+    max-width: 10em !important;
+}
+
+
+div[data-ui="Container"] {
+    margin: 0;
+    max-width: max-content
+}

@@ -3,13 +3,13 @@ import {error} from '@sveltejs/kit'
 import type {PageLoad} from './$types'
 
 export const load = (async () => {
-  const posts = await getPosts()
+    const posts = await getPosts()
 
-  if (posts) {
-    return {
-      posts
+    if (posts) {
+        return {
+            posts
+        }
     }
-  }
 
-  throw error(404, 'Not found')
+    throw error(404, 'Not found')
 }) satisfies PageLoad
