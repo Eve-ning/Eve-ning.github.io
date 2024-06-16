@@ -21,7 +21,7 @@ Test post for fancy Markdown with LaTeX & Mermaid.
 Success Message
 {:.success}
 
-![](/assets/images/posts/2023-06-15-hello-world/profile.png){:.circle.shadow}
+![]({{ site.baseurl }}/assets/images/posts/2023-06-15-hello-world/profile.png){:.circle.shadow}
 
 $$
 \text{ReLU(x)}=
