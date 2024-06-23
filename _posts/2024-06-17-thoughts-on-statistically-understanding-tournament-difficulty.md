@@ -7,7 +7,7 @@ How could we statistically set a guideline for difficulty of each pool?
 
 <!--more-->
 
-# Visualizing the Pool Framework
+# Visualizing the Pool on the _Difficulty Space_
 
 Before we jump the gun on how we should approach defining pool difficulty
 progression, we should revisit the fundamentals and motivations. There are 2
@@ -27,7 +27,7 @@ We can describe this using the following diagram:
 
 ```mermaid
 quadrantChart
-  title Example Pool Progression
+  title Pool Progression in the Difficulty Space
   x-axis RC Oriented --> LN Oriented
   y-axis Easy --> Hard
   quadrant-1 Hard LN
@@ -57,21 +57,37 @@ quadrantChart
   GF LN: [0.9, 0.91]
 ```
 
-We illustrate a few details in the quadrant above:
+We define the diagram above as the `difficulty space`{:.info}, which we will
+reference repeatedly in the following sections. In the _space_ above we see
+that:
 
-1. Easier rounds cover less width, while later covers more. This follows the
+1. Easier rounds cover less width, later covers more. This follows the
    idea that some skill-sets, especially niche ones, only occur in higher
    difficulties. Therefore, this will form a "cone-like" shape
 2. Easier rounds tend to have fewer maps than later ones. This follows the above
    idea: in later rounds new skill-sets surface, therefore, a pool should adapt
    and cover more ground.
 
-Assuming this ideal framework, we just have to find, or create maps that best
-match the placements on the quadrant.
+Assuming this `difficulty space`{:.info}, we have to determine the following:
+
+- `1`{:.info} The **extent** of the space we want to test
+- `2`{:.info} The **points** on the space we need to sample
+
+There are several methods that poolers usually use to tackle the above problems:
+
+1. Referencing Difficulty Systems (and related maps)
+2. Score Matching
+3. Qualitative Feedback
 
 ## Referencing Difficulty Systems
 
-To find maps that best match these points, we need to have a well-recognized
+`1`{:.info} To find maps that best match these points, we need to firstly
+understand the extent of x and y-axes. This means, answering the questions:
+
+- What does it mean to have a point exactly at $(x, y)$?
+- What subset of this space are we testing?
+
+To do so, we need to have a well-recognized
 definition for both axes, and this is where referencing a commonly used
 *difficulty system* like **Stella**, **osu!mania Dans**, **O2Jam Level System**
 comes in handy.
@@ -138,13 +154,6 @@ Additionally, maps not in the dan courses, but yet are accurately manually rated
 can be considered too!
 {:.info}
 
-## Solving the Problems
-
-To reiterate, we have the above 2 issues outlined:
-
-- **Difficulty System Matching**
-- **Hybrids**
-
 ### Difficulty System Matching
 
 As expected, when 2 separate systems are proposed, for LN and RC respectively,
@@ -152,12 +161,12 @@ we have difficulty determining what "levels" of the system should equate.
 As an example: determining if a BMS Lv.X be slotted in the same pool as a
 O2Jam Lv.Y.
 
-If we want to measure skill level, the simplest way is to yield a score.
+If we want to measure skill level of a map, the simplest way is to measure
+score.
 
-1. If a player scores the same across both maps, they *should* be the same
+1. If **one** player scores the same across both maps, they *should* be the same
    difficulty, therefore, can be put in the same pool.
-2. If more players share the same result as (1.), then it's further evidence to
-   put them in the same pool
+2. If **more** players agree on (1.), then it's further evidence
 
 The following is described in more detail to provide a robust understanding
 {:.info}
@@ -165,17 +174,17 @@ The following is described in more detail to provide a robust understanding
 As we know, there are some randomness and bias. Therefore, to make our claim
 more robust, we resort to some probability & statistics.
 
-Let $P(s|A,X)$ be the Probability Distribution Function (PDF) of score, for
+Let $P(s|p=A,m=X)$ be the Probability Distribution Function (PDF) of score, for
 **Player A** on **Map X**. As expected, if a player, plays any map, they aren't
 guaranteed a score, only likely to attain a score within some range.
 With that definition:
 
-1. If $P(s|A,X)\approx P(s|A,Y) \approx \dots$ this means that Player A scored
-   **similar scores** for all maps $X, Y, ...$. Which implies that they should
-   be on the **same pool**
+1. If $P(s|p=A,m=X)\approx P(s|p=A,m=Y) \approx \dots$ this means that Player A
+   scored **similar scores** for all maps $X, Y, ...$. Which implies that they
+   should be on the **same pool** according to Player A
 2. If, **other players** $B, C, \dots$ also follow the same verdict. E.g.
-   $P(s|\cdot,X)\approx P(s|\cdot,Y) \approx \dots$ where $\cdot$ is the Player.
-   Then we have more evidence that they should be on the same pool.
+   $P(s|p=\cdot,m=X)\approx P(s|p=\cdot,m=Y) \approx \dots$ where $\cdot$ is the
+   Player. Then we have more evidence that they should be on the same pool.
 
 What this math tells us is not only a way for the map-pooling team to decide
 if a map is well-designed/chosen, it can provide a retrospective analysis after
@@ -189,5 +198,23 @@ difficult or easy!
 Now back to the normal schedule
 {:.info}
 
-But this doesn't always hold true, many players are very biased against another
-skillset!
+However, (1.) doesn't hold true as many players are biased against another
+skill-set. Take for example, comparing BMS/O2Jam player were to evaluate a fair
+pool, they would naturally get different scores.
+
+```mermaid
+quadrantChart
+  title Players, and a respective Mappool
+  x-axis RC Oriented --> LN Oriented
+  y-axis Easy --> Hard
+  quadrant-1 Hard LN
+  quadrant-2 Hard RC
+  quadrant-3 Easy RC
+  quadrant-4 Easy LN
+  RC Player: [0.25, 0.75]
+  LN Player: [0.75, 0.75]
+  RC Map: [0.25, 0.25]
+  LN Map: [0.75, 0.25]
+```
+
+
