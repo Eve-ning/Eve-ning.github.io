@@ -7,16 +7,25 @@ How could we statistically set a guideline for difficulty of each pool?
 
 <!--more-->
 
-# Visualizing the Pool on the _Difficulty Space_
+# Motivation
 
-Before we jump the gun on how we should approach defining pool difficulty
-progression, we should revisit the fundamentals and motivations. There are 2
-reasons why a well-regulated and well-defined difficulty is beneficial to a
-tournament:
+There are 2 reasons why a well-regulated and well-defined difficulty is
+beneficial to a tournament:
 
 1. Players are **fairly** judged at every stage
 2. Mappers and poolers will have an approximate reference on target difficulty,
    **reducing confusion**, improving **difficulty accuracy**.
+
+Difficulty regulation is difficult, because the definition of difficulty is
+weak, subjective. Commonly, and acceptably, just defining the pool difficulty
+through "vibes" is sufficient, and it has worked well, for the past few
+hundred tournaments.
+
+As a member of many pooling teams, I've seen common patterns that could be
+defined in a more robust manner, which will be outlined as the "framework" in
+this article.
+
+# Visualizing the Pool on the _Difficulty Space_
 
 There are 2 key dimensions of a pool:
 
