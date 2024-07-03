@@ -1,3 +1,9 @@
 /* start custom scss snippet */
+code {
+  font-size: map-get($base, font-size-sm);
+}
 
+.article__content blockquote {
+  font-size: 1rem;
+}
 /* end custom scss snippet */

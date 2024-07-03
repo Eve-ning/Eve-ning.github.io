@@ -1,11 +1,14 @@
 ---
-title: Thoughts on Statistically Understanding Tournament Difficulty Progression
-tags: [ tournaments, vsrg ]
+title: (Draft) Thoughts on Statistically Understanding Tournament Difficulty Progression
+tags: [ tournaments, vsrg, draft ]
 ---
 
 How could we statistically set a guideline for difficulty of each pool?
 
 <!--more-->
+
+This is still in draft
+{:.warning}
 
 # Motivation
 
@@ -22,17 +25,23 @@ through "vibes" is sufficient, and it has worked well, for the past few
 hundred tournaments.
 
 As a member of many pooling teams, I've seen common patterns that could be
-defined in a more robust manner, which will be outlined as the "framework" in
-this article.
+documented in an aggregated manner, to act as a possible reference point for
+future pooling. This reference point is the **difficulty space**
 
 # Visualizing the Pool on the _Difficulty Space_
 
-There are 2 key dimensions of a pool:
+This "space" is a 2-dimensional space that roughly defines attributes of maps.
+Using this space, we can define what types of maps should go into the poolp.
 
-1. **Depth**: The progression of the pool, difficulty of each stage.
-2. **Width**: The diversity of the pool, the mapping style to target.
+The 2 dimensions, vertical and horizontal are defined by:
 
-We can describe this using the following diagram:
+1. **Depth** (Vertical): Further up are maps that are more difficult,
+   further down are easier ones.
+2. **Width** (Horizontal): Left and right defines different styles, we define
+   left as RC and right as LN. If necessary, we can extend to memorization skills
+   and so on.
+
+For example, a pool could be described like the following diagram.
 
 ```mermaid
 quadrantChart
@@ -66,23 +75,10 @@ quadrantChart
   GF LN: [0.9, 0.91]
 ```
 
-We define the diagram above as the `difficulty space`{:.info}, which we will
-reference repeatedly in the following sections. In the _space_ above we see
-that:
-
-1. Easier rounds cover less width, later covers more. This follows the
-   idea that some skill-sets, especially niche ones, only occur in higher
-   difficulties. Therefore, this will form a "cone-like" shape
-2. Easier rounds tend to have fewer maps than later ones. This follows the above
-   idea: in later rounds new skill-sets surface, therefore, a pool should adapt
-   and cover more ground.
-
-Assuming this `difficulty space`{:.info}, we have to determine the following:
-
-- `1`{:.info} The **extent** of the space we want to test
-- `2`{:.info} The **points** on the space we need to sample
-
-There are several methods that poolers usually use to tackle the above problems:
+Assuming we agree with this _abstract_ sketch of how we can define the ideal
+pool, we now have to put _actual_ definitions onto each point. E.g. what does
+$(x=0.2, y=0.8)$ mean? There are several methods that poolers usually resort to
+for the above problem:
 
 1. Referencing Difficulty Systems (and related maps)
 2. Score Matching
@@ -90,29 +86,44 @@ There are several methods that poolers usually use to tackle the above problems:
 
 ## Referencing Difficulty Systems
 
-`1`{:.info} To find maps that best match these points, we need to firstly
-understand the extent of x and y-axes. This means, answering the questions:
+To understand the **difficulty space**, we can first reference
+well-established difficulty systems like **Stella**, **osu!mania Dans**,
+**O2Jam Level System**.
 
-- What does it mean to have a point exactly at $(x, y)$?
-- What subset of this space are we testing?
-
-To do so, we need to have a well-recognized
-definition for both axes, and this is where referencing a commonly used
-*difficulty system* like **Stella**, **osu!mania Dans**, **O2Jam Level System**
-comes in handy.
-
-Similar to how we describe the pool, these *difficulty systems* tend to be:
+We can roughly describe these *difficulty systems* in the space:
 
 1. **Deep in Depth**: These systems often consider a large span of difficulties
    that many players engage with.
-2. **Narrow in Width**: However, they tend to only consider a smaller subset
+2. **Narrow in Width**: Unfortunately, they tend to only consider a subset
    of patterns. For example, BMS Systems often focus on Rice, and O2Jam on LNs.
-
-As an example, we may envision some samples of these systems like the following.
 
 ```mermaid
 quadrantChart
-  title Example Samples of Difficulty System
+  title BMS Difficulty System
+  x-axis RC Oriented --> LN Oriented
+  y-axis Easy --> Hard
+  quadrant-1 Hard LN
+  quadrant-2 Hard RC
+  quadrant-3 Easy RC
+  quadrant-4 Easy LN
+  BMS Lv.1: [0.25, 0.12]
+  BMS Lv.3: [0.2, 0.2]
+  BMS Lv.5: [0.26, 0.24]
+  BMS Lv.7: [0.27, 0.3]
+  BMS Lv.9: [0.22, 0.4]
+  BMS Lv.11: [0.12, 0.44]
+  BMS Lv.15: [0.4, 0.6]
+  BMS Lv.19: [0.18, 0.7]
+  BMS Lv.21: [0.13, 0.8]
+  BMS Lv.22: [0.3, 0.9]
+```
+
+As shown, one difficulty system only targets a thin "column" in the
+**difficulty space**. However, if we added another system...
+
+```mermaid
+quadrantChart
+  title BMS & O2JAM Difficulty Systems
   x-axis RC Oriented --> LN Oriented
   y-axis Easy --> Hard
   quadrant-1 Hard LN
@@ -141,23 +152,50 @@ quadrantChart
   O2Jam Lv.110: [0.68, 0.95]
 ```
 
-As shown, we do see how each difficulty system has good coverage in depth,
-however because they focus on a certain play style, their width naturally is
-thinner.
+It can populate the untouched space... however, the immediate issue that veteran
+players have is the assertion that BMS Lv. X is equal in difficulty to O2Jam LV. Y.
 
-This diagram gives intuition on the difficulties that poolers/mappers face when
-selecting/creating maps for the pool:
+You see, difficulty systems are mostly correct **within** each system,
+however, there's no guarantee that it works **between** systems.
+Therefore, an RC player could see the space as follows:
 
-1. **Difficulty System Matching**:
-   In the diagram, we assumed that certain O2Jam Levels equated to certain BMS
-   levels. However, this is up to debate, experts that are accustomed to
-   both systems should be consulted to balance.
-2. **Hybrids**:
-   We observe that difficulty systems tend to avoid the middle column. This
-   intersection of styles is uncommon for many reasons.
-   But it's easy to see that with less reference points, more
-   disagreements arise, and thus accuracy of difficulty estimate comes into
-   question.
+```mermaid
+quadrantChart
+  title BMS & O2JAM Difficulty System (Take 2)
+  x-axis RC Oriented --> LN Oriented
+  y-axis Easy --> Hard
+  quadrant-1 Hard LN
+  quadrant-2 Hard RC
+  quadrant-3 Easy RC
+  quadrant-4 Easy LN
+  BMS Lv.1: [0.25, 0.21]
+  BMS Lv.3: [0.2, 0.24]
+  BMS Lv.5: [0.26, 0.27]
+  BMS Lv.7: [0.27, 0.30]
+  BMS Lv.9: [0.22, 0.35]
+  BMS Lv.11: [0.12, 0.37]
+  BMS Lv.15: [0.4, 0.45]
+  BMS Lv.19: [0.18, 0.52]
+  BMS Lv.21: [0.13, 0.56]
+  BMS Lv.22: [0.3, 0.6]
+  O2Jam Lv.10: [0.85, 0.12]
+  O2Jam Lv.20: [0.8, 0.2]
+  O2Jam Lv.30: [0.6, 0.24]
+  O2Jam Lv.40: [0.79, 0.3]
+  O2Jam Lv.50: [0.68, 0.4]
+  O2Jam Lv.60: [0.59, 0.44]
+  O2Jam Lv.80: [0.75, 0.55]
+  O2Jam Lv.100: [0.78, 0.76]
+  O2Jam Lv.105: [0.83, 0.85]
+  O2Jam Lv.110: [0.68, 0.95]
+```
+
+Because their strong suit is RC, anything that's LN is substantially more
+difficult.
+
+This isn't all for naught though, we do have a way to relatively estimate
+difficulty for each system by referencing these difficulty systems, however
+it calls for a robust approach to "match" them!
 
 Additionally, maps not in the dan courses, but yet are accurately manually rated
 can be considered too!
@@ -165,65 +203,21 @@ can be considered too!
 
 ### Difficulty System Matching
 
-As expected, when 2 separate systems are proposed, for LN and RC respectively,
+To recap, when we use 2 separate difficulty systems,
 we have difficulty determining what "levels" of the system should equate.
-As an example: determining if a BMS Lv.X be slotted in the same pool as a
+In other words, determining if a BMS Lv.X be slotted in the same pool as a
 O2Jam Lv.Y.
 
 If we want to measure skill level of a map, the simplest way is to measure
-score.
+scores that players achieve. We posit the below claims
 
-1. If **one** player scores the same across both maps, they *should* be the same
-   difficulty, therefore, can be put in the same pool.
-2. If **more** players agree on (1.), then it's further evidence
+1. If **one** player scores the same across both maps, they _could_ be the same
+   difficulty, therefore, _could_ be put in the same pool.
+2. If **more** players agree on (1.), then it's further evidence that (1.) is
+   correct.
 
-The following is described in more detail to provide a robust understanding
-{:.info}
-
-As we know, there are some randomness and bias. Therefore, to make our claim
-more robust, we resort to some probability & statistics.
-
-Let $P(s|p=A,m=X)$ be the Probability Distribution Function (PDF) of score, for
-**Player A** on **Map X**. As expected, if a player, plays any map, they aren't
-guaranteed a score, only likely to attain a score within some range.
-With that definition:
-
-1. If $P(s|p=A,m=X)\approx P(s|p=A,m=Y) \approx \dots$ this means that Player A
-   scored **similar scores** for all maps $X, Y, ...$. Which implies that they
-   should be on the **same pool** according to Player A
-2. If, **other players** $B, C, \dots$ also follow the same verdict. E.g.
-   $P(s|p=\cdot,m=X)\approx P(s|p=\cdot,m=Y) \approx \dots$ where $\cdot$ is the
-   Player. Then we have more evidence that they should be on the same pool.
-
-What this math tells us is not only a way for the map-pooling team to decide
-if a map is well-designed/chosen, it can provide a retrospective analysis after
-each round to determine if it was fair.
-
-A common way to determine the difference in distribution is the
-[Jensen-Shannon Divergence](https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence).
-Very simply, big number, big difference, which implies a certain map may be too
-difficult or easy!
-
-Now back to the normal schedule
-{:.info}
-
-However, (1.) doesn't hold true as many players are biased against another
-skill-set. Take for example, comparing BMS/O2Jam player were to evaluate a fair
-pool, they would naturally get different scores.
-
-```mermaid
-quadrantChart
-  title Players, and a respective Mappool
-  x-axis RC Oriented --> LN Oriented
-  y-axis Easy --> Hard
-  quadrant-1 Hard LN
-  quadrant-2 Hard RC
-  quadrant-3 Easy RC
-  quadrant-4 Easy LN
-  RC Player: [0.25, 0.75]
-  LN Player: [0.75, 0.75]
-  RC Map: [0.25, 0.25]
-  LN Map: [0.75, 0.25]
-```
+Importantly (1.) won't be true most times, because test-players are biased
+against another skill-set. E.g. if a BMS/O2Jam player were to evaluate a fair
+pool, they would naturally get different scores, even if it's absolutely fair.
 
 

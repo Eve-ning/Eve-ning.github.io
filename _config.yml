@@ -36,9 +36,9 @@ author:
   type      : person # "person" (default), "organization"
   name      : Eve-ning
   url       :
-  avatar    : # path or url of avatar image (square)
+  avatar    :
   bio       : Data Magician
-  email     :
+  email     : dev_evening@hotmail.com
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
   twitter   : dev_evening # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
   weibo     : # "user_id"   the last part of your profile url, e.g. https://www.weibo.com/user_id/profile?...
@@ -47,7 +47,7 @@ author:
   medium    : # "user_name" the last part of your profile url, e.g. https://medium.com/user_name
   zhihu     : # "user_name" the last part of your profile url, e.g. https://www.zhihu.com/people/user_name
   douban    : # "user_name" the last part of your profile url, e.g. https://www.douban.com/people/user_name
-  linkedin  : # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
+  linkedin  : jcrq # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
   github    : Eve-ning # "user_name" the last part of your profile url, e.g. https://github.com/user_name
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
 
