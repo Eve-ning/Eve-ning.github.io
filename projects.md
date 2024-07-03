@@ -5,18 +5,18 @@ key: page-about
 ---
 
 > :warning: _Oh god this is ugly!_
-> I'm working on it!
+> I'm working on it! Also, these are outdated, I'll fix it in the coming days
 
 [FRModel](https://github.com/Eve-ning/FRModel)
+<i class="fab fa-github"></i>
+<i class="fab fa-python"></i>
 
 My current research project. Using unmanned drone data to
 classify trees. The data consists of 2D Multi-spectral & 3D Point Cloud data,
 we estimate tree health as much as possible.
-
 My main contribution is to create a unifying package for team researchers,
 and also contributing to experiments.
 
-Languages: Python. Wiki Framework: Sphinx,
 
 [Re:amber](https://github.com/Eve-ning/reamber)
 <i class="fab fa-github"></i>,
@@ -53,19 +53,23 @@ to create an online tool hosted by Heroku.,
 Languages: Python.
 Web Framework: Django.
 HTML Framework: Bootstrap 5.
-Host: Heroku / Microsoft Azure,
+Host: Heroku / Microsoft Azure
 
-**Previous Website** <i class="fab fa-bootstrap"></i> <i class="fab fa-html5"></i>
-<i class="fas fa-cloud"></i> <i class="fab fa-vuejs"></i> <i class="fab fa-js"></i>,
+**Previous Website**
+<i class="fab fa-bootstrap">
+</i> <i class="fab fa-html5"></i>
+<i class="fas fa-cloud"></i>
+<i class="fab fa-vuejs"></i>
+<i class="fab fa-js"></i>
+
 Using Bootstrap 5, I made this website from scratch :)
-
 Not a fan of web development, but I'm proud of what I have done here.
 Special Thanks to
 <a class="text-primary text-decoration-none" href="https://twitter.com/IceDynamix">
 IceDynamix</a>
 for introducing me to Vue!,
 Languages: HTML, CSS, JS
-HTML Framework: Bootstrap 5, Vue.JS.,
+HTML Framework: Bootstrap 5, Vue.JS.
 
 [Streamlit - re:amberPy](https://share.streamlit.io/eve-ning/streamlit-example/analysis.py)
 <i class="fab fa-github"></i>
