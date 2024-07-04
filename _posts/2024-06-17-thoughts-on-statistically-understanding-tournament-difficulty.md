@@ -210,4 +210,4 @@ O2Jam Lv.Y.
 The simplest approach is to ask multiple test-players to play maps across these
 systems, effectively, connecting the dots.
 However, it's easy to see that conducting this large-scale experiment is
-not only a logistics hell but also high effort. I do
+not only a logistics hell but also high effort.
