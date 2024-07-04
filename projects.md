@@ -8,19 +8,22 @@ key: page-about
 > I'm working on it! Also, these are outdated, I'll fix it in the coming days
 
 [FRModel](https://github.com/Eve-ning/FRModel)
-<i class="fab fa-github"></i>
-<i class="fab fa-python"></i>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/pytorch.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/python.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/github.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/docker.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/gcp.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/terraform.svg"/>
 
-My current research project. Using unmanned drone data to
+> My research project. Using unmanned drone data to
 classify trees. The data consists of 2D Multi-spectral & 3D Point Cloud data,
 we estimate tree health as much as possible.
 My main contribution is to create a unifying package for team researchers,
 and also contributing to experiments.
 
-
 [Re:amber](https://github.com/Eve-ning/reamber)
-<i class="fab fa-github"></i>,
-C++, C
+<img height="20px" src="{{ site.baseurl }}/assets/icons/github.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/cpp.svg"/>
 
 An osu! SV/BPM mapping tool that evolved from CLI to a GUI tool.
 Dusting off this ancient artifact of a program, I recreated re:amber using
@@ -30,8 +33,8 @@ Currently, <span class="font-monospace">re:amberPy</span> is being developed.,
 Languages: C, C++. Framework: Qt,
 
 [Re:amberPy](https://github.com/Eve-ning/reamberPy)
-<i class="fab fa-github"></i>
-<i class="fab fa-python"></i>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/github.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/python.svg"/>
 
 This is a <b>Python</b> package expected to cover most VSRG formats,
 including: <span class="font-monospace">.osu .sm .ojm .bms .qua</span>
@@ -42,11 +45,11 @@ Languages: Python.
 Wiki Framework: Sphinx,
 
 [Django - re:amberPy](https://evening-osu.herokuapp.com/analytics/render/)
-<i class="fab fa-github"></i>
-<i class="fab fa-python"></i>
-<i class="fab fa-bootstrap"></i>
-<i class="fab fa-html5"></i>
-<i class="fas fa-cloud"></i>,
+<img height="20px" src="{{ site.baseurl }}/assets/icons/github.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/python.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/bootstrap.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/html5.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/django.svg"/>
 
 Using Django, I pivot off of <span class="font-monospace">re:amberPy</span>
 to create an online tool hosted by Heroku.,
@@ -56,11 +59,10 @@ HTML Framework: Bootstrap 5.
 Host: Heroku / Microsoft Azure
 
 **Previous Website**
-<i class="fab fa-bootstrap">
-</i> <i class="fab fa-html5"></i>
-<i class="fas fa-cloud"></i>
-<i class="fab fa-vuejs"></i>
-<i class="fab fa-js"></i>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/bootstrap.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/html5.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/vuejs.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/js.svg"/>
 
 Using Bootstrap 5, I made this website from scratch :)
 Not a fan of web development, but I'm proud of what I have done here.
@@ -72,11 +74,10 @@ Languages: HTML, CSS, JS
 HTML Framework: Bootstrap 5, Vue.JS.
 
 [Streamlit - re:amberPy](https://share.streamlit.io/eve-ning/streamlit-example/analysis.py)
-<i class="fab fa-github"></i>
-<i class="fab fa-python"></i>
-<i class="fab fa-bootstrap"></i>
-<i class="fab fa-html5"></i>
-<i class="fas fa-cloud"></i>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/github.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/python.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/bootstrap.svg"/>
+<img height="20px" src="{{ site.baseurl }}/assets/icons/html5.svg"/>
 
 Using Streamlit, with <span class="font-monospace">re:amberPy</span>
 I create another online tool hosted by Streamlit Cloud!,
@@ -86,23 +87,30 @@ HTML Framework: Bootstrap 5.
 Host: Heroku / Microsoft Azure,
 
 [vsrgtools](https://github.com/Eve-ning/vsrgtools)
+<img height="20px" src="{{ site.baseurl }}/assets/icons/rlang.svg"/>
 R-Variant of re:amberPy
 
 [sv-tool](https://github.com/Eve-ning/sv-tool)
+<img height="20px" src="{{ site.baseurl }}/assets/icons/cpp.svg"/>
 Ancient C++ CLI of re:amberPy
 
 [ARXScore](https://github.com/Eve-ning/ARXScore)
+<img height="20px" src="{{ site.baseurl }}/assets/icons/python.svg"/>
 An XGBoost estimator for VSRG map difficulty estimation
 
 [aleph0](https://github.com/Eve-ning/aleph0)
+<img height="20px" src="{{ site.baseurl }}/assets/icons/python.svg"/>
 Python code used to generate the visual Beatmap Aleph-0 Extended By LeaF.
 
 [numpy_as_strided_guide](https://github.com/Eve-ning/numpy_as_strided_guide)
+<img height="20px" src="{{ site.baseurl }}/assets/icons/latex.svg"/>
 A LaTeX Document on how NumPy <span class="font-monospace">as_strided</span>
 operates,
 
 [ppshift_ml](https://github.com/Eve-ning/ppshift_ml)
+<img height="20px" src="{{ site.baseurl }}/assets/icons/pytorch.svg"/>
 An early approach on map difficulty estimation using DNNs.
 
 [SV-Crash-Course-LaTeX](https://github.com/Eve-ning/SV-Crash-Course-LaTeX)
+<img height="20px" src="{{ site.baseurl }}/assets/icons/latex.svg"/>
 A LaTeX document tutorial on how SVs in osu! operate.
