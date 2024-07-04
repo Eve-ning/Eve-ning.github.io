@@ -152,7 +152,7 @@ quadrantChart
   O2Jam Lv.110: [0.68, 0.95]
 ```
 
-It can populate the untouched space... however, the immediate issue that veteran
+It can populate the empty space... however, the immediate issue that veteran
 players have is the assertion that BMS Lv. X is equal in difficulty to O2Jam LV. Y.
 
 You see, difficulty systems are mostly correct **within** each system,
@@ -195,7 +195,7 @@ difficult.
 
 This isn't all for naught though, we do have a way to relatively estimate
 difficulty for each system by referencing these difficulty systems, however
-it calls for a robust approach to "match" them!
+it calls for a robust approach to match levels across systems.
 
 Additionally, maps not in the dan courses, but yet are accurately manually rated
 can be considered too!
@@ -207,17 +207,7 @@ To recap, when we use 2 separate difficulty systems,
 we have difficulty determining what "levels" of the system should equate.
 In other words, determining if a BMS Lv.X be slotted in the same pool as a
 O2Jam Lv.Y.
-
-If we want to measure skill level of a map, the simplest way is to measure
-scores that players achieve. We posit the below claims
-
-1. If **one** player scores the same across both maps, they _could_ be the same
-   difficulty, therefore, _could_ be put in the same pool.
-2. If **more** players agree on (1.), then it's further evidence that (1.) is
-   correct.
-
-Importantly (1.) won't be true most times, because test-players are biased
-against another skill-set. E.g. if a BMS/O2Jam player were to evaluate a fair
-pool, they would naturally get different scores, even if it's absolutely fair.
-
-
+The simplest approach is to ask multiple test-players to play maps across these
+systems, effectively, connecting the dots.
+However, it's easy to see that conducting this large-scale experiment is
+not only a logistics hell but also high effort. I do

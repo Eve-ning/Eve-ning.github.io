@@ -41,7 +41,7 @@ I mostly work on projects around Vertical Scrolling Rhythm Games such as
 
 - [Reamber: A C++ Windows Tool for SV Editing in osu!mania](https://github.com/Eve-ning/reamber)
 - [ReamberPy: A Python Toolbox that supports manipulating game files in multiple VSRGs](https://github.com/Eve-ning/reamberpy)
-- [Opal: An online ML Collaborative Filtering Model that Predicts Scores](https://github.com/Eve-ning/opal-emb)
+- [Opal: An online ML Collaborative Filtering Model that Predicts Scores](https://github.com/Eve-ning/opal)
 
 Professionally, I'm specializing in Machine Learning Engineering, in which I
 bridge the gap between ML Research and Software Engineering. To be honest, it's
