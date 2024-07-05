@@ -62,17 +62,28 @@ roadblock in many ways
 Therefore, every time I want to add a new functionality... it's a few weeks
 of time-investment.
 
-On the upside, it has benefited many mappers, and hopefully has expanded the
-range of maps that is possible (without having to resort to Excel).
+Thankfully, it has benefited many mappers, I'm grateful for those who PMed me
+that they've made good use of it. Hopefully, it expanded the range of maps that
+is possible (without having to resort to Excel).
 
 [Re:amberPy](https://github.com/Eve-ning/reamberPy)
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
 
-This is a **Python** package expected to cover most VSRG
-formats,including: `.osu .sm .ojm .bms .qua`. The aim is to create an *
-*open-source** library that VSRG programmers use to improve their Python skills
-while enjoying the game. This is still under developement.
+> Re:amberPy... I know, odd name. I didn't know why I picked this name, probably
+> time to rebrand one day.
+
+`Re:amberPy` is a **Python** package with a similar goal to `Re:amber`. Making
+mapping easier for mappers. This extends functionality way further than
+what `Re:amber` has done, with the tradeoff that it doesn't have a GUI (yet).
+By making this tradeoff, of no GUI and a simpler language, it can now:
+
+- handle most VSRG formats, including: `.osu .sm .ojm .bms .qua`.
+- flexible API to (batch) manipulate maps
+- work with any OS
+
+On the side, it is also aiming to be a **open-source** library that VSRG
+programmers use to improve their Python skills while enjoying the game.
 
 [Django - re:amberPy](https://evening-osu.herokuapp.com/analytics/render/)
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
