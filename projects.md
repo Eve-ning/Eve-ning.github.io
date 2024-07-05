@@ -148,17 +148,17 @@ An early approach on map difficulty estimation using DNNs.
 A LaTeX document tutorial on how SVs in osu! operate.
 
 <style>
-div.proj-icon img{
-  height: 25px;
-  width: 25px;
-  padding: 0px 3px 5px 0px
-}
 div.proj-icon {
   display: inline;
+  margin: 0 5px;
+}
+div.proj-icon img{
+  height: 25px;
+  width: auto;
+  margin: 0 5px 0 0;
+  padding: 3px;
   background-color: #222;
-  padding: 6px;
-  border-radius: 5%;
-  transition-duration: 1s;
+  border-radius: 25%;
 }
 </style>
 <script>
