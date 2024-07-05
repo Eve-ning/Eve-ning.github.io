@@ -88,8 +88,8 @@ Heroku, hosted on Microsoft Azure
 **Previous Website**
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Bootstrap.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Html5.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Vuejs.svg"></div>
+<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/HTML5.svg"></div>
+<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/VueJS.svg"></div>
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/JavaScript.svg"></div>
 
 Using Bootstrap 5, I made this website from scratch :)
@@ -98,7 +98,7 @@ Special Thanks to [https://twitter.com/IceDynamix](IceDynamix)
 for introducing me to Vue!. It was also hosted on GitHub Pages
 
 [Streamlit - re:amberPy](https://share.streamlit.io/eve-ning/streamlit-example/analysis.py)
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Github.svg"></div>
+<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Bootstrap.svg"></div>
 <div class="proj-icon" src="{{ site.baseurl }}/assets/icons/HTML5.svg"></div>
