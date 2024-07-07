@@ -53,12 +53,12 @@ sources:
     mermaid: 'https://cdn.bootcdn.net/ajax/libs/mermaid/10.9.1/mermaid.min.js'
   unpkg:
     font_awesome: 'https://use.fontawesome.com/releases/v5.15.1/css/all.css'
-    jquery: 'https://unpkg.com/jquery@3.3.1/dist/jquery.min.js'
+    jquery: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'
     leancloud_js_sdk: '//cdn.jsdelivr.net/npm/leancloud-storage@3.13.2/dist/av-min.js'
-    chart: 'https://unpkg.com/chart.js@2.7.2/dist/Chart.min.js'
+    chart: 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js'
     gitalk:
       js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js'
       css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
     valine: 'https//unpkg.com/valine/dist/Valine.min.js'
-    mathjax: 'https://unpkg.com/mathjax@2.7.4/unpacked/MathJax.js?config=TeX-MML-AM_CHTML'
-    mermaid: 'https://unpkg.com/mermaid@10.9.1/dist/mermaid.min.js'
+    mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+    mermaid: 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js'
