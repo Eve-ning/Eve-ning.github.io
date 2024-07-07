@@ -60,5 +60,5 @@ sources:
       js: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.min.js'
       css: 'https://unpkg.com/gitalk@1.2.2/dist/gitalk.css'
     valine: 'https//unpkg.com/valine/dist/Valine.min.js'
-    mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+    mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js'
     mermaid: 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js'
