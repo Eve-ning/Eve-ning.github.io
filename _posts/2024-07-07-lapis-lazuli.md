@@ -144,30 +144,32 @@ flowchart TD
 I roughly follow the above train of thought when considering what to map, what
 to ignore, and such. Remember that people, while complex, likes simple.
 
+We show some variants that can be achieved, if we just skip some sounds entirely 
+
 <table>
 <tr>
   <td>
     <div class="osumania-4">
       451130|0|P,
-      451130|3|P,
+      451130|3|R,
       451218|1|P,
       451306|2|P,
-      451393|0|P,
+      451393|0|R,
       451481|2|P,
       451569|1|P,
-      451656|3|P,
+      451656|3|R,
       451744|1|P,
       451832|2|P,
-      451920|0|P,
+      451920|0|R,
       452007|2|P,
       452095|1|P,
-      452183|3|P,
+      452183|3|R,
       452183|0|P,
     </div>
   </td>
   <td>
     <div class="osumania-4">
-      451130|0|P
+      451130|0|R
       451130|3|P
       451218|1|P
       451306|3|P
@@ -175,14 +177,14 @@ to ignore, and such. Remember that people, while complex, likes simple.
       451481|2|P
       451569|0|P
       451656|2|P
-      451656|3|P
+      451656|3|R
       451744|0|P
       451832|2|P
       451920|1|P
       452007|3|P
       452095|1|P
       452183|3|P
-      452183|0|P
+      452183|0|R
     </div>
   </td>
   <td>
