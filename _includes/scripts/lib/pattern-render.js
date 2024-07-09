@@ -73,8 +73,6 @@
       noteHeight = canvas.height * noteHeightScale, lnWidth = noteWidth * 0.7,
       ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = "#333"
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = '#FFF';
     ctx.strokeStyle = '#222';
 

@@ -1,10 +1,14 @@
 {%- include snippets/get-sources.html -%}
 {%- assign _sources = __return -%}
 <script>
-  window.Lazyload.js('{{ _sources.mermaid }}', function() {
+  window.Lazyload.js('{{ _sources.mermaid }}', function () {
+    const prefersDarkMode = (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    );
     mermaid.initialize({
       startOnLoad: true,
-      theme: 'dark',
+      theme: prefersDarkMode ? 'dark' : 'default',
     });
     mermaid.init(undefined, '.language-mermaid');
   });
