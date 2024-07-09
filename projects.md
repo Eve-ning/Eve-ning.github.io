@@ -6,7 +6,7 @@ aside:
   toc: true
 ---
 
-# Major Projects
+# Main Projects
 
 ## [FRDC](https://github.com/FR-DC/FRDC-ML/)
 
@@ -129,7 +129,7 @@ It's dependent on [osu-data](https://github.com/Eve-ning/osu-data) which is a
 bash script wrapped in Python, so it's uploadable to PyPI. This allows itself
 to be installed through `pip` for easy usage.
 
-# Minor Projects
+# Side Projects
 
 Most projects here are unmaintained, so they may not work.
 {:.warning}

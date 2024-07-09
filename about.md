@@ -91,18 +91,18 @@ mindmap
 
 ```
 
-
-
-## Want to know more?
-
-- Connecting professionally? LinkedIn in the footer.
-- Connecting unprofessionally? Twitter in the footer.
-
 <style>
 .node-circle {
    stroke: white;
 }
 .node-no-border{
-  stroke: white;
+   stroke: white;
+}
+path.edge {
+  filter:
+    drop-shadow(-1px -1px 0px #aaa)
+    drop-shadow(1px -1px 0px #aaa)
+    drop-shadow(1px 1px 0px #aaa)
+    drop-shadow(-1px 1px 0px #aaa)
 }
 </style>
