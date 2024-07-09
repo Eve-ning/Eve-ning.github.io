@@ -37,52 +37,72 @@ build this website.
 
 I'm Evening, I do programming, game-level design, and naturally game a lot.
 
-I mostly work on projects around Vertical Scrolling Rhythm Games such as
+I mostly work on projects around Vertical Scrolling Rhythm Games, which you
+can see [here]({{site.baseurl}}/projects).
 
-- [Reamber: A C++ Windows Tool for SV Editing in osu!mania](https://github.com/Eve-ning/reamber)
-- [ReamberPy: A Python Toolbox that supports manipulating game files in multiple VSRGs](https://github.com/Eve-ning/reamberpy)
-- [Opal: An online ML Collaborative Filtering Model that Predicts Scores](https://github.com/Eve-ning/opal)
+Professionally, I'm specializing in Machine Learning Engineering, which
+bridges the gap between ML Research and Software Engineering.
 
-Professionally, I'm specializing in Machine Learning Engineering, in which I
-bridge the gap between ML Research and Software Engineering. To be honest, it's
-quite a generic role I'm taking, I just love programming, and ML is quite hip
-these days.
+## Tools
+
+```mermaid
+mindmap
+  root((Tools))
+    b((ML Eng.))
+      PyTorch
+      SciKit-Learn
+      SciKit-Image
+    d((Software Eng.))
+      Python
+        Lightning
+        Streamlit
+      C++
+        Qt
+      CUDA
+      C#
+        Unity
+      Bash
+    e((Cloud Eng.))
+      Google Cloud
+        Cloud Storage
+        Compute Engine
+      Terraform
+    f((Dev Ops))
+      Docker
+      Kubernetes
+      GitHub Actions
+    h((Web Dev))
+      JS
+        Vue.JS
+        Svelte.JS
+          Sanity
+      CSS
+        SCSS
+        Bootstrap 5
+        Tailwind CSS
+          DaisyUI
+    i((Management)
+      Jira
+      Confluence
+    c((Data Eng.))
+      NumPy
+      Pandas
+      R Lang
+
+```
 
 
-## Tools I use
-
-Some of the core languages/libraries I use:
-
-| Library / Tool        | Purpose                                            | Field         |
-|-----------------------|----------------------------------------------------|---------------|
-| Python                | Everything Programming (that's not time sensitive) | Software Eng. |
-| PyTorch (Lightning)   | Architecting ML Models and Training                | ML Eng.       |
-| NumPy                 | Scientific Data Manipulation                       | Data Eng.     |
-| Pandas                | Tabular Data Manipulation                          | Data Eng.     |
-| SciKit-Learn          | Common ML Models                                   | ML Eng.       |
-| SciKit-Image          | (Scientific) Image Manipulation                    | ML CV Eng.    |
-| Google Cloud Platform | All Cloud Stuff                                    | Cloud Eng.    |
-| Terraform             | Infra as Code                                      | Cloud Eng.    |
-| Docker                | Testing/Running OS-agnostic Apps                   | Dev Ops       |
-| GitHub Actions        | CI/CD                                              | Dev Ops       |
-| LaTeX                 | Research Typesetting (or if I wanna look formal)   | Research      |
-| Streamlit             | Hosting Python Applications                        | Software Eng. |
-
-Some tools I used to use
-
-| Library / Tool | Purpose                                                                                                | Field         |
-|----------------|--------------------------------------------------------------------------------------------------------|---------------|
-| R              | Light ML and Plotting (ggplot2 is the GOAT)                                                            | Data Eng.     |
-| C++            | Programming stuff that's time-sensitive                                                                | Software Eng. |
-| CUDA           | Programming stuff that's REALLY time-sensitive like [glcm-cupy](https://github.com/Eve-ning/glcm-cupy) | Software Eng. |
-| C#             | I probably use this for games only                                                                     | Game Dev.     |
-| Vue.JS         | To develop my previous Website                                                                         | Web Dev.      |
-| Svelte.JS      | To develop my previous Website                                                                         | Web Dev.      |
-| Bootstrap 5    | Web styling                                                                                            | Web Dev.      |
-| Tailwind CSS   | Web styling                                                                                            | Web Dev       |
-| Qt             | Used to develop [Reamber](https://github.com/Eve-ning/reamber)                                         | GUI Dev.      |
 
 ## Want to know more?
 
 - Connecting professionally? LinkedIn in the footer.
 - Connecting unprofessionally? Twitter in the footer.
+
+<style>
+.node-circle {
+   stroke: white;
+}
+.node-no-border{
+  stroke: white;
+}
+</style>

@@ -10,14 +10,14 @@ aside:
 
 ## [FRDC](https://github.com/FR-DC/FRDC-ML/)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/PyTorch.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/PyTorchLightning.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Docker.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GCP.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Terraform.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/LabelStudio.svg"></div>
+<div class="icon-badge" data-name="PyTorch"></div>
+<div class="icon-badge" data-name="PyTorchLightning"></div>
+<div class="icon-badge" data-name="Python"></div>
+<div class="icon-badge" data-name="GitHub"></div>
+<div class="icon-badge" data-name="Docker"></div>
+<div class="icon-badge" data-name="GCP"></div>
+<div class="icon-badge" data-name="Terraform"></div>
+<div class="icon-badge" data-name="LabelStudio"></div>
 
 **Computer-Vision Tree Classification from Drone Multispectral Imagery**
 
@@ -25,8 +25,8 @@ aside:
 
 This project aims to estimate secondary forest recovery by using metrics
 derived from aerial drone imagery. We achieve this complex transformation of
-imagery to metric using a performant CNN backbone (EfficientNetB1) and
-further improve its performance through Semi-Supervised Learning (FixMatch).
+imagery to metric using a performant CNN backbone ([EfficientNetB1](https://pytorch.org/vision/main/models/generated/torchvision.models.efficientnet_b1.html)) and
+further improve its performance through Semi-Supervised Learning ([FixMatch](https://arxiv.org/abs/2001.07685)).
 
 I'm responsible for anything engineering:
 
@@ -42,10 +42,10 @@ And... I do a little management too:
 
 ## [Re:amber](https://github.com/Eve-ning/reamber)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/CPlusPlus.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Qt.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="GitHub"></div>
+<div class="icon-badge" data-name="CPlusPlus"></div>
+<div class="icon-badge" data-name="Qt"></div>
+<div class="icon-badge" data-name="osu!"></div>
 
 **osu!mania SV mapping GUI tool for Windows**
 
@@ -85,9 +85,9 @@ is possible (without having to resort to Excel).
 
 ## [Re:amberPy](https://github.com/Eve-ning/reamberPy)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="GitHub"></div>
+<div class="icon-badge" data-name="Python"></div>
+<div class="icon-badge" data-name="osu!"></div>
 
 **VSRG game-file editing toolkit on Python**
 
@@ -108,14 +108,14 @@ programmers use to improve their Python skills while enjoying the game.
 
 ## [Opal](https://github.com/Eve-ning/opal)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/PyTorchLightning.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Streamlit.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/MySQL.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Docker.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Bash.svg"></div>
+<div class="icon-badge" data-name="GitHub"></div>
+<div class="icon-badge" data-name="Python"></div>
+<div class="icon-badge" data-name="osu!"></div>
+<div class="icon-badge" data-name="PyTorchLightning"></div>
+<div class="icon-badge" data-name="Streamlit"></div>
+<div class="icon-badge" data-name="MySQL"></div>
+<div class="icon-badge" data-name="Docker"></div>
+<div class="icon-badge" data-name="Bash"></div>
 
 **opal is an osu! player accuracy-prediction model.**
 
@@ -136,8 +136,8 @@ Most projects here are unmaintained, so they may not work.
 
 ## [monkeydance](https://dev-evening.itch.io/monkeydance)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Unity.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/CSharp.svg"></div>
+<div class="icon-badge" data-name="Unity"></div>
+<div class="icon-badge" data-name="CSharp"></div>
 
 A small Unity Game made in 24 Hours, test how fast can you press arrow keys
 correctly!
@@ -146,8 +146,8 @@ correctly!
 
 ## [Jio](https://github.com/Eve-ning/Jio)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Unity.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/CSharp.svg"></div>
+<div class="icon-badge" data-name="Unity"></div>
+<div class="icon-badge" data-name="CSharp"></div>
 
 This was made for the Design and Innovation Project (DIP) course in NTU.
 {:.info}
@@ -160,26 +160,26 @@ setting.
 
 ## [vsrgtools](https://github.com/Eve-ning/vsrgtools)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/RLang.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="RLang"></div>
+<div class="icon-badge" data-name="osu!"></div>
 R-Variant of re:amberPy
 
 ## [sv-tool](https://github.com/Eve-ning/sv-tool)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/CPlusPlus.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="CPlusPlus"></div>
+<div class="icon-badge" data-name="osu!"></div>
 Ancient C++ CLI of re:amberPy
 
 ## [ARXScore](https://github.com/Eve-ning/ARXScore)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="Python"></div>
+<div class="icon-badge" data-name="osu!"></div>
 An XGBoost estimator for VSRG map difficulty estimation
 
 ## [aleph0](https://github.com/Eve-ning/aleph0)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="Python"></div>
+<div class="icon-badge" data-name="osu!"></div>
 
 {%- include extensions/youtube.html id='V5OMJpN00Js' -%}
 
@@ -187,34 +187,35 @@ Python code used to generate the visual Beatmap Aleph-0 Extended By LeaF.
 
 ## [numpy_as_strided_guide](https://github.com/Eve-ning/numpy_as_strided_guide)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/LaTeX.svg"></div>
+<div class="icon-badge" data-name="LaTeX"></div>
 
 
-![numpy_as_strided_guide Preview]({{ site.baseurl }}/assets/images/projects/numpy_as_strided_guide.png)
+![numpy_as_strided_guide Preview]({{ site.baseurl
+}}/assets/images/projects/numpy_as_strided_guide.png)
 
 A LaTeX Document on how NumPy `as_strided` operates,
 
 ## [ppshift_ml](https://github.com/Eve-ning/ppshift_ml)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/PyTorch.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="PyTorch"></div>
+<div class="icon-badge" data-name="osu!"></div>
 An early approach on map difficulty estimation using DNNs.
 
 ## [SV-Crash-Course-LaTeX](https://github.com/Eve-ning/SV-Crash-Course-LaTeX)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/LaTeX.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="LaTeX"></div>
+<div class="icon-badge" data-name="osu!"></div>
 A LaTeX document tutorial on how SVs in osu! operate.
 
 ## [Django - re:amberPy](https://evening-osu.herokuapp.com/analytics/render/)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Bootstrap.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/HTML5.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Django.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Azure.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="GitHub"></div>
+<div class="icon-badge" data-name="Python"></div>
+<div class="icon-badge" data-name="Bootstrap"></div>
+<div class="icon-badge" data-name="HTML5"></div>
+<div class="icon-badge" data-name="Django"></div>
+<div class="icon-badge" data-name="Azure"></div>
+<div class="icon-badge" data-name="osu!"></div>
 
 Because Heroku is now on paid plans, the website stopped working
 {:.warning}
@@ -224,25 +225,25 @@ Heroku, hosted on Microsoft Azure
 
 ## [Streamlit - re:amberPy](https://share.streamlit.io/eve-ning/streamlit-example/analysis.py)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Python.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Streamlit.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/osu!.svg"></div>
+<div class="icon-badge" data-name="GitHub"></div>
+<div class="icon-badge" data-name="Python"></div>
+<div class="icon-badge" data-name="Streamlit"></div>
+<div class="icon-badge" data-name="osu!"></div>
 
 Using Streamlit, with `re:amberPy`
 I create another online tool hosted by Streamlit Cloud!
 
 ## Previous Website(s)
 
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/GitHub.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Bootstrap.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/HTML5.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/VueJS.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Svelte.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/DaisyUI.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/SCSS.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/Sanity.svg"></div>
-<div class="proj-icon" src="{{ site.baseurl }}/assets/icons/JavaScript.svg"></div>
+<div class="icon-badge" data-name="GitHub"></div>
+<div class="icon-badge" data-name="Bootstrap"></div>
+<div class="icon-badge" data-name="HTML5"></div>
+<div class="icon-badge" data-name="VueJS"></div>
+<div class="icon-badge" data-name="Svelte"></div>
+<div class="icon-badge" data-name="DaisyUI"></div>
+<div class="icon-badge" data-name="SCSS"></div>
+<div class="icon-badge" data-name="Sanity"></div>
+<div class="icon-badge" data-name="JavaScript"></div>
 
 I have a few prior websites to this, they were built using several technologies
 as listed above. I wouldn't say I'm a seasoned web developer, but I'm proud of
@@ -252,38 +253,17 @@ You can take a look at how I developed these old websites in my article
 [Why did you change your website 4 times ???]({{ site.baseurl
 }}/2024/07/03/why-did-you-change-your-website-4-times.html)
 
-
-<style>
-div.proj-icon {
-  display: inline;
-  margin: 0 5px;
-}
-div.proj-icon img{
-  height: 25px;
-  width: auto;
-  margin: 0 5px 0 0;
-  padding: 3px;
-  background-color: #222;
-  border-radius: 25%;
-}
-</style>
-<script>
-function getFileName(path) {
-  const segments = path.split('/');
-  const fileNameWithExtension = segments.pop();
-  const fileName = fileNameWithExtension.split('.')[0];
-  return fileName;
-}
+<script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
-  const projectIcons = document.querySelectorAll('div.proj-icon');
-  projectIcons.forEach(function(div) {
-    const src = div.getAttribute('src');
+  const newIcons = document.querySelectorAll('div.icon-badge');
+  newIcons.forEach(function(div) {
+    const iconName = div.dataset.name;
     const img = document.createElement('img');
-    img.setAttribute('src', src);
-    img.classList.add('proj-icon');
+    img.setAttribute('src', "{{ site.baseurl }}/assets/icons/" + iconName + ".svg");
+    img.classList.add('icon-badge');
 
     const pathText = document.createElement('span');
-    pathText.textContent = getFileName(src);
+    pathText.textContent = iconName;
 
     div.appendChild(img);
     div.removeAttribute('src');
