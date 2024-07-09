@@ -25,8 +25,11 @@ aside:
 
 This project aims to estimate secondary forest recovery by using metrics
 derived from aerial drone imagery. We achieve this complex transformation of
-imagery to metric using a performant CNN backbone ([EfficientNetB1](https://pytorch.org/vision/main/models/generated/torchvision.models.efficientnet_b1.html)) and
-further improve its performance through Semi-Supervised Learning ([FixMatch](https://arxiv.org/abs/2001.07685)).
+imagery to metric using a performant CNN
+backbone ([EfficientNetB1](https://pytorch.org/vision/main/models/generated/torchvision.models.efficientnet_b1.html))
+and
+further improve its performance through Semi-Supervised
+Learning ([FixMatch](https://arxiv.org/abs/2001.07685)).
 
 I'm responsible for anything engineering:
 
@@ -88,6 +91,7 @@ is possible (without having to resort to Excel).
 <div class="icon-badge" data-name="GitHub"></div>
 <div class="icon-badge" data-name="Python"></div>
 <div class="icon-badge" data-name="osu!"></div>
+<div class="icon-badge" data-name="PyPI"></div>
 
 **VSRG game-file editing toolkit on Python**
 
@@ -116,6 +120,8 @@ programmers use to improve their Python skills while enjoying the game.
 <div class="icon-badge" data-name="MySQL"></div>
 <div class="icon-badge" data-name="Docker"></div>
 <div class="icon-badge" data-name="Bash"></div>
+<div class="icon-badge" data-name="NGINX"></div>
+<div class="icon-badge" data-name="PyPI"></div>
 
 **opal is an osu! player accuracy-prediction model.**
 
