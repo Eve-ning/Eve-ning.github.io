@@ -6,11 +6,11 @@ ul.toc {
 
   & > li {
 
-    margin: calc(map-get($spacers, 1) / 2) 0;
+    margin: map-get($spacers, 1) / 2 0;
 
     a { /* stylelint-disable-line selector-max-type */
       display: inline-block;
-      margin: calc(map-get($spacers, 1) / 4) 0;
+      margin: map-get($spacers, 1) / 4 0;
       text-decoration: none !important; /* stylelint-disable-line declaration-no-important */
     }
   }
