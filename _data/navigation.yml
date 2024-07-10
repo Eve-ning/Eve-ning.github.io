@@ -50,8 +50,3 @@ header:
       tr: &TR       Hakkında
       # @end locale config
     url: /about.html
-
-
-  - titles:
-      en: Projects
-    url: /projects.html

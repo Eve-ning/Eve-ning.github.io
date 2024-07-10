@@ -7,6 +7,26 @@ If you didn't know, great, if you did, sorry.
 
 <!--more-->
 
+
+<div class="icon-badge" data-name="GitHub"></div>
+<div class="icon-badge" data-name="Bootstrap"></div>
+<div class="icon-badge" data-name="HTML5"></div>
+<div class="icon-badge" data-name="VueJS"></div>
+<div class="icon-badge" data-name="Svelte"></div>
+<div class="icon-badge" data-name="DaisyUI"></div>
+<div class="icon-badge" data-name="SCSS"></div>
+<div class="icon-badge" data-name="Sanity"></div>
+<div class="icon-badge" data-name="JavaScript"></div>
+
+I have a few prior websites to this, they were built using several technologies
+as listed above. I wouldn't say I'm a seasoned web developer, but I'm proud of
+how much I've explored in this area :bulb:
+
+You can take a look at how I developed these old websites in my article
+[Why did you change your website 4 times ???]({{ site.baseurl
+}}/2024/07/03/why-did-you-change-your-website-4-times.html)
+
+
 # Background
 
 To recap I have 4 versions of my previous websites:
