@@ -52,10 +52,13 @@
 
 .article__header--cover {
   width: 100%;
-  height: 30%;
+  height: 200px;
   object-fit: cover;
+  transition: height 0.3s;
 }
 
 .article__header--cover:hover {
-  height: auto; // or set to the image's natural height if known
+  height: 400px; // or set to the image's natural height if known
+
+  transition: height 0.3s;
 }
