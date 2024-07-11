@@ -1,3 +1,32 @@
+<div class="article__project-details">
+  {%- if include.article.project.url -%}
+  <div class="article__project-url">
+    <a class="button button--info button--pill button--md"
+       href="{{ include.article.project.url }}"
+       target="_blank">
+       	🔗  Link to Repository
+    </a>
+  </div>
+  {%- endif -%}
+
+  {%- if include.article.project.status -%}
+    {%- case include.article.project.status -%}
+      {%- when 'completed' -%}
+        <div class="button button--success button--pill button--md">
+          Project Status: Completed
+        </div>
+      {%- when 'wip' -%}
+        <div class="button button--warning button--pill button--md">
+          Project Status: Work In Progress
+        </div>
+      {%- when 'hiatus' -%}
+        <div class="button button--info button--pill button--md">
+          Project Status: Hiatus
+        </div>
+    {%- endcase -%}
+  {%- endif -%}
+</div>
+
 {%- assign _author = site.data.authors[include.article.author] | default: site.author -%}
 
 {%- if include.html != false -%}
@@ -38,7 +67,6 @@
   {%- if _show_tags or _show_author or _show_date or _pageview -%}
     <div class="article__info clearfix">
       {%- if _show_tags -%}
-
         <ul class="left-col menu">
           {%- assign _tag_path = _paths_archive | append: '?tag=' -%}
           {%- include snippets/prepend-baseurl.html path=_tag_path -%}
