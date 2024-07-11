@@ -1,21 +1,14 @@
 ---
 title: "Re:amberPy: VSRG Toolbox in Python"
 tags: [ Project, GitHub, Python, osu!, PyPI ]
+project:
+  status: completed
+url: https://github.com/Eve-ning/reamberPy
 ---
 
-...
+VSRG game-file editing toolkit on Python
 
 <!--more-->
-
-
-# [Re:amberPy](https://github.com/Eve-ning/reamberPy)
-
-<div class="icon-badge" data-name="GitHub"></div>
-<div class="icon-badge" data-name="Python"></div>
-<div class="icon-badge" data-name="osu!"></div>
-<div class="icon-badge" data-name="PyPI"></div>
-
-**VSRG game-file editing toolkit on Python**
 
 > Re:amberPy... I know, odd name. I didn't know why I picked this name, probably
 > time to rebrand one day.

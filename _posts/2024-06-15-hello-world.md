@@ -1,6 +1,6 @@
 ---
 title: Hello World Testing Post
-tags: [testing]
+tags: [ testing ]
 ---
 
 Test post for fancy Markdown with LaTeX & Mermaid.

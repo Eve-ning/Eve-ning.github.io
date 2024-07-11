@@ -1,14 +1,14 @@
 ---
 title: "Streamlit - re:amberPy"
-tags: [ Project ]
+tags: [ Project, GitHub, Python, Streamlit, osu!mania ]
+project:
+  status: wip
+url: https://share.streamlit.io/eve-ning/streamlit-example/analysis.py
 ---
 
-[Streamlit - re:amberPy](https://share.streamlit.io/eve-ning/streamlit-example/analysis.py)
+Using Streamlit, with `re:amberPy`, I attempt to recreate `re:amber`'s GUI
+on the cloud for better accessibility.
 
-<div class="icon-badge" data-name="GitHub"></div>
-<div class="icon-badge" data-name="Python"></div>
-<div class="icon-badge" data-name="Streamlit"></div>
-<div class="icon-badge" data-name="osu!"></div>
+<!--more-->
 
-Using Streamlit, with `re:amberPy`
-I create another online tool hosted by Streamlit Cloud!
+This is still currently WIP, I'm not sure when I'll get to this
