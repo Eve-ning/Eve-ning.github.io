@@ -1,5 +1,5 @@
 ---
-title: ":heavy_check_mark: monkeydance: 24h Unity Game Jam"
+title: "monkeydance: 24h Unity Game Jam"
 tags: [ Project ]
 ---
 

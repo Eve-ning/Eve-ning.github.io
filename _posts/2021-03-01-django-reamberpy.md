@@ -1,5 +1,5 @@
 ---
-title: ":heavy_check_mark: Django - re:amberPy"
+title: "Django - re:amberPy"
 tags: [ Project ]
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: ":heavy_check_mark: numpy_as_strided_guide: A LaTeX tutorial on how NumPy as_strided operates."
+title: "numpy_as_strided_guide: A LaTeX tutorial on how NumPy as_strided operates."
 tags: [ Project ]
 ---
 

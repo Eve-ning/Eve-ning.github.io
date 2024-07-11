@@ -4,15 +4,19 @@
   @include media-breakpoint-down(md) {
     margin-top: map-get($spacers, 4);
   }
+
   header, h1 {
     display: inline;
   }
+
   h1 {
     word-wrap: break-word;
   }
+
   .split-space {
     @include user-select(none);
   }
+
   .edit-on-github {
     text-decoration: none !important;
   }
@@ -29,6 +33,7 @@
       padding-bottom: map-get($spacers, 5);
     }
   }
+
   .overlay__excerpt {
     font-size: map-get($base, font-size-h3-xl);
     @include media-breakpoint-down(lg) {
@@ -47,4 +52,10 @@
 
 .article__header--cover {
   width: 100%;
+  height: 30%;
+  object-fit: cover;
+}
+
+.article__header--cover:hover {
+  height: auto; // or set to the image's natural height if known
 }
