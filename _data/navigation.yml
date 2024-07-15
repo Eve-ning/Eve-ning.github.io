@@ -1,5 +1,8 @@
 header:
   - titles:
+      en: Home
+    url: /
+  - titles:
       # @start locale config
       en: &EN       Archive
       en-GB: *EN
@@ -50,3 +53,4 @@ header:
       tr: &TR       Hakkında
       # @end locale config
     url: /about.html
+

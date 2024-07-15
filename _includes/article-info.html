@@ -4,7 +4,7 @@
     <a class="button button--info button--pill button--md"
        href="{{ include.article.project.url }}"
        target="_blank">
-       	🔗  Link to Repository
+       	🔗 Link
     </a>
   </div>
   {%- endif -%}
@@ -13,15 +13,15 @@
     {%- case include.article.project.status -%}
       {%- when 'completed' -%}
         <div class="button button--success button--pill button--md">
-          Project Status: Completed
+          Status: Completed
         </div>
       {%- when 'wip' -%}
         <div class="button button--warning button--pill button--md">
-          Project Status: Work In Progress
+          Status: Work In Progress
         </div>
       {%- when 'hiatus' -%}
         <div class="button button--info button--pill button--md">
-          Project Status: Hiatus
+          Status: Hiatus
         </div>
     {%- endcase -%}
   {%- endif -%}

@@ -1,6 +1,13 @@
 ---
 title: bohemianvoodoo - Lapis Lazuli [sculpteur d'émotion]
-tags: [ vsrg, osu!mania ]
+tags: [ VSRG, osu!mania ]
+project:
+  status: completed
+  url: https://osu.ppy.sh/beatmapsets/2210134#mania/4681404
+article_header:
+  type: cover
+  image:
+    src: /assets/images/posts/2024-07-07-lapis-lazuli/img.png
 ---
 
 We'll illustrate how we sculpted this piece
@@ -144,7 +151,7 @@ flowchart TD
 I roughly follow the above train of thought when considering what to map, what
 to ignore, and such. Remember that people, while complex, likes simple.
 
-We show some variants that can be achieved, if we just skip some sounds entirely 
+We show some variants that can be achieved, if we just skip some sounds entirely
 
 <table>
 <tr>

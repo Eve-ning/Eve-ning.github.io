@@ -1,6 +1,6 @@
 ---
 title: Estimate Difficulty of VSRG Difficulty Estimate
-tags: [ vsrg, osu!mania ]
+tags: [ VSRG, osu!mania ]
 ---
 
 After years studying difficulty estimation for VSRG, I lay out common problems

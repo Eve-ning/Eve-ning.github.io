@@ -1,6 +1,6 @@
 ---
 title: (Draft) Thoughts on Statistically Understanding Tournament Difficulty Progression
-tags: [ tournaments, vsrg, draft ]
+tags: [ Tournaments, VSRG, draft ]
 ---
 
 How could we statistically set a guideline for difficulty of each pool?

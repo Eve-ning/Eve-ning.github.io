@@ -1,6 +1,6 @@
 ---
 title: "Re:amberPy: VSRG Toolbox in Python"
-tags: [ Project, GitHub, Python, osu!, PyPI ]
+tags: [ Project, GitHub, Python, osu!mania, PyPI ]
 project:
   status: completed
   url: https://github.com/Eve-ning/reamberPy
@@ -24,3 +24,5 @@ By making this tradeoff, of no GUI and a simpler language, it can now:
 
 On the side, it is also aiming to be a **open-source** library that VSRG
 programmers use to improve their Python skills while enjoying the game.
+
+[Interested? Get started in the documentation here](https://eve-ning.github.io/reamberPy/gettingstarted.html)
