@@ -1,22 +1,11 @@
 ---
-title: Why did you change your website 4 times ???
-tags: [ website ]
+title: Why did you change your website 4 times?
+tags: [ Website, GitHub, Bootstrap, HTML5, VueJS, Svelte, DaisyUI, SCSS, Sanity, JavaScript ]
 ---
 
 If you didn't know, great, if you did, sorry.
 
 <!--more-->
-
-
-<div class="icon-badge" data-name="GitHub"></div>
-<div class="icon-badge" data-name="Bootstrap"></div>
-<div class="icon-badge" data-name="HTML5"></div>
-<div class="icon-badge" data-name="VueJS"></div>
-<div class="icon-badge" data-name="Svelte"></div>
-<div class="icon-badge" data-name="DaisyUI"></div>
-<div class="icon-badge" data-name="SCSS"></div>
-<div class="icon-badge" data-name="Sanity"></div>
-<div class="icon-badge" data-name="JavaScript"></div>
 
 I have a few prior websites to this, they were built using several technologies
 as listed above. I wouldn't say I'm a seasoned web developer, but I'm proud of
