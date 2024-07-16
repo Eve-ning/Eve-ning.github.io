@@ -20,7 +20,7 @@ We'll illustrate how we sculpted this piece
 
 _sculpteur d'émotion_ is one of my more unique entries. It's mapped for
 [osu!mania 4K French Tournament](https://osu.ppy.sh/community/forums/topics/1929981?n=1)
-(therefore the difficulty name).
+(therefore the difficulty name)
 
 The approach, as mentioned in the description, is to have **singular focus**
 and **negative space**.
