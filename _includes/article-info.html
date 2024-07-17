@@ -1,13 +1,20 @@
 <div class="article__project-details">
-  {%- if include.article.project.url -%}
   <div class="article__project-url">
+    {%- if include.article.project.url -%}
     <a class="button button--info button--pill button--md"
        href="{{ include.article.project.url }}"
        target="_blank">
        	🔗 Link
     </a>
+    {%- endif -%}
+    {%- if include.article.project.repo -%}
+    <a class="button button--info2 button--pill button--md"
+       href="{{ include.article.project.repo }}"
+       target="_blank">
+        🔗 Repository
+    </a>
+    {%- endif -%}
   </div>
-  {%- endif -%}
 
   {%- if include.article.project.status -%}
     {%- case include.article.project.status -%}

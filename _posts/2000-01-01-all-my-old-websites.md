@@ -1,9 +1,9 @@
 ---
-title: Why did you change your website 4 times?
+title: All my old websites
 tags: [ Website, GitHub, Bootstrap, HTML5, VueJS, Svelte, DaisyUI, SCSS, Sanity, JavaScript ]
 ---
 
-If you didn't know, great, if you did, sorry.
+A trip around web dev technologies, to end up to the simplest one.
 
 <!--more-->
 
@@ -11,18 +11,21 @@ I have a few prior websites to this, they were built using several technologies
 as listed above. I wouldn't say I'm a seasoned web developer, but I'm proud of
 how much I've explored in this area :bulb:
 
-You can take a look at how I developed these old websites in my article
-[Why did you change your website 4 times ???]({{ site.baseurl
-}}/2024/07/03/why-did-you-change-your-website-4-times.html)
+I have 5 different versions of my previous websites, you can go to them
+via the links below. They are developed chronologically in the listed order.
+Note that some functionalities may not work.
 
+- [HTML + SCSS](https://eve-ning.github.io/website-html/)
+- [Jekyll](https://eve-ning.github.io/website-jekyll/)
+- [Vue (Version 1)](https://eve-ning.github.io/website-vue-1/)
+- [Vue (Version 2)](https://eve-ning.github.io/website-vue-2/)
+- [Svelte + Sanity](https://eve-ning.github.io/website-svelte/)
 
-# Background
+# HTML + SCSS
 
-To recap I have 4 versions of my previous websites:
+The 1st version was made in raw `HTML` and `SCSS`. I believe it used to look
+much better
 
-## Version 1
-
-The 1st version was made in raw `HTML` and `SCSS`, ouch
 
 Let's not talk about that
 

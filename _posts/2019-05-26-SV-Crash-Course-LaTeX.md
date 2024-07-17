@@ -3,7 +3,7 @@ title: "SV Crash Course: A LaTeX tutorial on how SVs in osu!mania work"
 tags: [ Project, LaTeX, osu!mania ]
 project:
   status: completed
-  url: https://github.com/Eve-ning/ppshift_ml
+  repo: https://github.com/Eve-ning/ppshift_ml
 article_header:
   type: cover
   image:
@@ -20,7 +20,7 @@ the track. As expected, we can artificially change difficulty in any map by
 increasing or decreasing scroll speed. However, we can
 
 
-## Research Report
+# Research Report
 
 - [Link to Tutorial](https://github.com/Eve-ning/SV-Crash-Course-LaTeX/blob/master/builds/11082018.pdf)
 

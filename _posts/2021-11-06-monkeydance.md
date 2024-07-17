@@ -3,7 +3,7 @@ title: "monkeydance: 24h Unity Game Jam"
 tags: [ Project, Unity, C# ]
 project:
   status: completed
-  url: https://github.com/Eve-ning/monkeydance
+  repo: https://github.com/Eve-ning/monkeydance
 article_header:
   type: cover
   image:

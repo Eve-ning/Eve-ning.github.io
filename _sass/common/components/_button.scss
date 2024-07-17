@@ -35,6 +35,10 @@
   @include clickable("text-color-function", "blue-color");
 }
 
+.button--info2 {
+  @include clickable("text-color-function", "#00a8ff");
+}
+
 .button--warning {
   @include clickable("text-color-function", "yellow-color");
 }

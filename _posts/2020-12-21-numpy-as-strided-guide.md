@@ -3,7 +3,7 @@ title: "numpy_as_strided_guide: A LaTeX tutorial on how NumPy as_strided operate
 tags: [ Project, LaTeX, Python ]
 project:
   status: completed
-  url: https://github.com/Eve-ning/numpy_as_strided_guide
+  repo: https://github.com/Eve-ning/numpy_as_strided_guide
 article_header:
   type: cover
   image:

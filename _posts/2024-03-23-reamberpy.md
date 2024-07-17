@@ -3,7 +3,7 @@ title: "Re:amberPy: VSRG Toolbox in Python"
 tags: [ Project, GitHub, Python, osu!mania, PyPI ]
 project:
   status: completed
-  url: https://github.com/Eve-ning/reamberPy
+  repo: https://github.com/Eve-ning/reamberPy
 ---
 
 VSRG game-file editing toolkit on Python

@@ -3,7 +3,7 @@ title: "vsrgtools: R-Variant of re:amberPy"
 tags: [ Project, RLang, osu!mania ]
 project:
   status: completed
-  url: https://github.com/Eve-ning/vsrgtools
+  repo: https://github.com/Eve-ning/vsrgtools
 article_header:
   type: cover
   image:
