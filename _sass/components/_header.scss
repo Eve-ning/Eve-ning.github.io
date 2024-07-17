@@ -68,6 +68,10 @@
     height: map-get($base, font-size-h4) * 1.6;
     margin-right: map-get($spacers, 3);
     vertical-align: middle;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 25%;
+    padding: 1px;
     @include media-breakpoint-down(md) {
       width: map-get($base, font-size-h4) * 1.2;
       height: map-get($base, font-size-h4) * 1.2;
