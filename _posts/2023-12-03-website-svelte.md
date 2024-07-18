@@ -2,8 +2,8 @@
 title: Website Svelte
 tags: [ Website, GitHub, Bootstrap, Svelte, DaisyUI, SCSS, Sanity, JavaScript ]
 project:
-status: completed
-url: https://eve-ning.github.io/website-svelte/
+  status: completed
+  url: https://eve-ning.github.io/website-svelte/
 ---
 
 Svelte? I had to choose the most niche language for the fun of it.
@@ -21,8 +21,6 @@ Svelte? I had to choose the most niche language for the fun of it.
 # The 5th Website
 
 ![image](/assets/images/posts/2023-12-03-website-svelte/img2.png)
-
-
 
 ## Svelte
 

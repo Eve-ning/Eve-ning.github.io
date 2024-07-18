@@ -2,8 +2,8 @@
 title: Website Vue 2
 tags: [ Website, GitHub, Bootstrap, VueJS, JavaScript ]
 project:
-status: completed
-url: https://eve-ning.github.io/website-vue-2/
+  status: completed
+  url: https://eve-ning.github.io/website-vue-2/
 ---
 
 I tried VueJS again!

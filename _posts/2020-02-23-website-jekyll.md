@@ -4,7 +4,6 @@ tags: [ Website, GitHub, Bootstrap, SCSS, JavaScript ]
 project:
   status: completed
   url: https://eve-ning.github.io/website-jekyll/
-  repo: https://github.com/eve-ning/website-jekyll/
 ---
 
 My very first website, built with Jekyll, Bootstrap, SCSS and JavaScript,

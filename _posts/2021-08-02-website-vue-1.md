@@ -4,7 +4,6 @@ tags: [ Website, GitHub, Bootstrap, VueJS, JavaScript ]
 project:
   status: completed
   url: https://eve-ning.github.io/website-vue-1/
-  repo: https://github.com/Eve-ning/website-vue-1/
 ---
 
 The first website I built using a JavaScript framework, VueJS!

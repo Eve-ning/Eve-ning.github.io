@@ -4,7 +4,6 @@ tags: [ Website, GitHub, Bootstrap, SCSS, JavaScript, HTML5  ]
 project:
   status: completed
   url: https://eve-ning.github.io/website-html/
-  repo: https://github.com/eve-ning/website-html/
 ---
 
 My second website, built with Bootstrap, SCSS, JS and good ol' HTML5 (I'm not
