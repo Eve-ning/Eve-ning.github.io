@@ -1,6 +1,6 @@
 ---
 title: "osu! Dataset: data.ppy.sh osu!mania datasets"
-tags: [ Project, GitHub, Python, osu!mania, PyPI ]
+tags: [ Project, GitHub, Python, osu!mania, PyPI, Docker, GitHub Actions, Shell ]
 project:
   status: completed
   repo: https://github.com/Eve-ning/osu-data

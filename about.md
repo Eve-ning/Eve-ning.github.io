@@ -30,9 +30,6 @@ fr-LU   : *FR
 key: page-about
 ---
 
-I used [jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme/) to
-build this website.
-
 # About Me
 
 I'm Evening, I do programming, game-level design, and naturally game a lot.
