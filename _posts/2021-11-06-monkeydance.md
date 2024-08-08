@@ -4,6 +4,7 @@ tags: [ Project, Unity, C# ]
 project:
   status: completed
   repo: https://github.com/Eve-ning/monkeydance
+  url: https://dev-evening.itch.io/monkeydance
 article_header:
   type: cover
   image:
