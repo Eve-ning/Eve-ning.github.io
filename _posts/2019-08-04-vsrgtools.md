@@ -4,6 +4,7 @@ tags: [ Project, RLang, osu!mania ]
 project:
   status: completed
   repo: https://github.com/Eve-ning/vsrgtools
+  url: https://evening.shinyapps.io/estear/
 article_header:
   type: cover
   image:
