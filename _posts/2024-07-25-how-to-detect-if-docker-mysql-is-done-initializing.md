@@ -25,6 +25,6 @@ I personally prefer copying it into the container, the syntax of commands
 on the compose file is funky.
 I've tested this a few times, it seems to be working consistently.
 
-See how I used it in action: [In the osu-data Repository](https://github.com/Eve-ning/osu-data/blob/dataset/osu_data/osu.mysql.healthcheck.sh)
+See how I used it in action: [In the osu-data Repository](https://github.com/Eve-ning/osu-data/blob/master/osu_data/osu.mysql.healthcheck.sh)
 
 A short port, but I took a few months to solve this, hope this helps someone!
