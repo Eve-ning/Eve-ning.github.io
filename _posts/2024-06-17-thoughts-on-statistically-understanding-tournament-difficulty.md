@@ -1,14 +1,11 @@
 ---
-title: Thoughts on Statistically Understanding Tournament Difficulty Progression
+title: 2-cents on Visually Understanding Tournament Difficulty Progression
 tags: [ Tournaments, VSRG ]
 ---
 
-How could we statistically set a guideline for difficulty of each pool?
+My quick 2-cents on difficulty curation for tournament map pooling
 
 <!--more-->
-
-This is still in draft
-{:.warning}
 
 # Motivation
 
