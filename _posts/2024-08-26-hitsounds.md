@@ -37,8 +37,8 @@ There are 4 critical timestamps to consider:
 gantt
   dateFormat mm:ss
   axisFormat %M:%S
-  Game Expects KB Input: milestone, 00:05,
-  Player KB Input: milestone, 00:05,
+  Game Demands KB Input: milestone, 00:05,
+  Player Provides KB Input: milestone, 00:05,
   KB Feedback Delay: 00:05, 00:10
   Player Hears KB Feedback: crit, milestone, 00:10,
   Game Feedback Delay: 00:05, 00:35
@@ -46,13 +46,19 @@ gantt
 ```
 
 Observe the red diamonds:
-We see that the KB hit sound (the clack of the KB) and the Game
-"hit sound" don't occur at the same time, due to delay
-in processing the input, and playing the audio.
+The KB hit sound (the clack of the KB) and the Game "hit sound" don't occur at
+the same time, due to delay when processing the input, and playing the audio.
 
 As a result, players hear 2 different audio feedback sources. This is especially
 confusing for players using speakers, they clearly hear themselves hitting the
-keyboard... and the game feedback.
+keyboard then the game hit sound feedback.
+
+As expected, this is especially disorientating, if possible, we should only
+hear both at the same time, or just one, and preferably as close to the input
+time as possible.
+
+Though there's more to it than aural feedback, let's formulate the perfect
+scenario, then figure out how games tackle this problem.
 
 ### The Ideal Scenario
 
@@ -69,7 +75,9 @@ physically impossible to adjust it. Thus, (2, 3, 4.) must somehow "shift" to
 accommodate this.
 
 This has a lot more elements though, so let's supplement our graph with more
-detail. Let's take a step back and consider what happens **before** the player
+detail.
+
+Let's take a step back and consider what happens **before** the player
 is expected to input.
 
 ```mermaid
@@ -133,7 +141,8 @@ many rhythm games!
 
 ### Solution 1: Remove a Source of Feedback
 
-Even though it's not possible to achieve the ideal, we can still compromise as there
+Even though it's not possible to achieve the ideal, we can still compromise as
+there
 are some common alternative scenarios where the player won't hear both the KB
 and Game Hit Sound:
 
