@@ -72,13 +72,8 @@ Notably, the most difficult constraint is syncing KB Feedback with
 Game Feedback because one is physical and the other is constrained by the
 game processing speed, which can never be as fast.
 
-While Game Music Sync is not exactly a source of feedback as it's
-**independent** of the player keyboard input,
-it's still vital to sync it exactly
-on all sources. However, because it's easy to control the delay, we won't
-include it in all future discussions unless necessary.
-
-We have to now talk about the 2 main methods that games do this.
+We discuss the major solutions many players do to *partially* reach this ideal
+setup.
 
 ## Reactive Feedback
 
