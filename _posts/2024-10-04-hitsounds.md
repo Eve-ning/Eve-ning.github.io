@@ -1,10 +1,11 @@
 ---
-title: "Hitsounds in Rhythm Games"
+title: "Hit Sounds, Visual and Audio Offset impact on Syncing in Rhythm Games"
 tags: [ VSRG ]
 ---
 
 How do you sync every source of feedback in Rhythm Games? Are visual and audio
-offsets important?
+offsets important? Furthermore, do Hit Sounds contribute positively or
+negatively to player experience?
 
 <!--more-->
 
@@ -15,6 +16,11 @@ Hitsounds in Rhythm Games are a way to give feedback on player inputs.
 Ideally, the 2 major sources of feedback in Rhythm Games, *visual* and *aural*
 are exactly synced together. Though syncing the **physical keyboard sound**
 and **game hitsound** is just not physically possible.
+
+## Disclaimer
+
+The values in the graphs below are made-up to simplify the point I'm making,
+though they can be analytically found through experiments.
 
 ## Background
 
@@ -309,6 +315,13 @@ gantt
 
 As expected, we do not sync the visual feedback.
 
+> Despite this being the weirdest solution, it's successfully implemented in
+> the game [Rhythm Doctor](https://rhythmdr.com/). They expected the player to
+> be playing with or without headphones and compromised for that.
+> Furthermore, they actively discouraged visual syncing with some levels that
+> distorted visuals, for example
+> [Battleworm Insomniac](https://www.youtube.com/watch?v=7F8_Oc-rt_A)
+
 Note that this option must be **embedded** within the game, and not a simple
 customizable option Players can change freely, like using headphones or not.
 
@@ -422,21 +435,20 @@ gantt
     Player Sees Visual Game Feedback: crit, milestone, 00:40,
 ```
 
-# What Offsetting do you need in a Game?
+# Offsetting
 
-Now, we have to ask ourselves a few questions:
+Surprisingly, despite years of VSRGs being made, there's still contention on
+if offsetting is necessary. In particular, there are 2 major offsets:
 
-Do all VSRGs need:
+1. Audio Offset
+2. Visual Offset
 
-1. Display Offsetting? (Delay)
-2. Audio Offsetting? (Delay)
-3. A separate feedback Offsetting mechanism?
+Not surprisingly, these are crucial configurations for highly competitive games
+where every setting counts.
 
-An important note in offsetting is that there's
-
-## Offsetting for Game Audio and Visual Sync
-
-To recap, using headphones will mostly nullify KB Feedback.
+> Generally, we don't **need** to tweak the **demand offset**, mainly because
+> it's too complicated for the laypeople just trying to play VSRGs. But we
+> show for completeness.
 
 To give an example, a player measured this weird de-synced Demand and Feedback
 graph when playing.
@@ -447,37 +459,45 @@ gantt
   axisFormat %M:%S
 
   section Aural D.
-    Game Demands Aurally: milestone, 00:03,
-    Aural Demand Delay: 00:03, 00:09
-    Player Hears Aural Demand: active, milestone, 00:09,
+    Game Demands Aurally: milestone, 00:05,
+    Aural Demand Delay: 00:05, 00:20
+    Player Hears Aural Demand: active, milestone, 00:20,
 
   section Visual D.
-    Game Demands Visually: milestone, 00:02,
-    Visual Demand Delay: 00:02, 00:04
-    Player Sees Visual Demand: active, milestone, 00:04,
+    Game Demands Visually: milestone, 00:05,
+    Visual Demand Delay: 00:05, 00:10
+    Player Sees Visual Demand: active, milestone, 00:10,
 
   section KB Input
-    Player KB Input: active, milestone, 00:06,
+    Player KB Input: active, milestone, 00:15,
 
   section Game Aural
-    Aural Game Feedback Delay: 00:06, 00:36
-    Player Hears Aural Game Feedback: crit, milestone, 00:36,
+    Aural Game Feedback Delay: 00:15, 00:30
+    Player Hears Aural Game Feedback: crit, milestone, 00:30,
 
   section Game Visual
-    Visual Game Feedback Delay: 00:06, 00:51
-    Player Sees Visual Game Feedback: crit, milestone, 00:51,
+    Visual Game Feedback Delay: 00:15, 00:40
+    Player Sees Visual Game Feedback: crit, milestone, 00:40,
+
+  section KB Feedback
+    Aural KB Feedback Delay: 00:15, 00:25
+    Player Hears Aural KB Feedback: crit, milestone, 00:25,
 ```
 
-Assuming that we **must** input the note on 6ms (highlighted in light blue),
-there are many ways to "align" this:
+> This long of an Aural Demand delay is surprisingly common when you play on
+> speakers!
 
-1. Shift Demand Audio Offset -3ms
-2. Shift Demand Visual Offset +2ms
-3. Delay Feedback Audio Offset +15ms
+Let's say they want to sync
 
-It's not conclusive if these small changes will improve how the game feels,
-especially when nudging single digit offsets, but it's good to know for
-optimization.
+1. (Light Blue) When they hit physically to the Aural and Visual Demand
+2. (Red) When they receive Aural and Visual Feedback
+3. Ignoring the Aural KB Feedback
+
+We can apply:
+
+1. -5ms Delay to the Aural Demand
+2. +5ms Delay to the Visual Demand
+3. +10ms Delay to the Aural Feedback
 
 ```mermaid
 gantt
@@ -485,34 +505,43 @@ gantt
   axisFormat %M:%S
 
   section Aural D.
-    -3ms: crit, 00:00, 00:03
+    -5ms: crit, 00:00, 00:05
     Game Demands Aurally: milestone, 00:00,
-    Aural Demand Delay: 00:00, 00:06
-    Player Hears Aural Demand: active, milestone, 00:06,
+    Aural Demand Delay: 00:00, 00:15
+    Player Hears Aural Demand: active, milestone, 00:15,
 
   section Visual D.
-    +2ms: crit, 00:02, 00:04
-    Game Demands Visually: milestone, 00:04,
-    Visual Demand Delay: 00:04, 00:06
-    Player Sees Visual Demand: active, milestone, 00:06,
+    +5ms: crit, 00:05, 00:10
+    Game Demands Visually: milestone, 00:10,
+    Visual Demand Delay: 00:10, 00:15
+    Player Sees Visual Demand: active, milestone, 00:15,
 
   section KB Input
-    Player KB Input: active, milestone, 00:06,
+    Player KB Input: active, milestone, 00:15,
 
   section Game Aural
-    Aural Game Feedback Delay: 00:06, 00:36
-    +15ms: crit, 00:36, 00:51
-    Player Hears Aural Game Feedback: crit, milestone, 00:51,
+    Aural Game Feedback Delay: 00:15, 00:30
+    +10ms: crit, 00:30, 00:40
+    Player Hears Aural Game Feedback: crit, milestone, 00:40,
 
   section Game Visual
-    Visual Game Feedback Delay: 00:06, 00:51
-    Player Sees Visual Game Feedback: crit, milestone, 00:51,
+    Visual Game Feedback Delay: 00:15, 00:40
+    Player Sees Visual Game Feedback: crit, milestone, 00:40,
+
+  section KB Feedback
+    Aural KB Feedback Delay: 00:15, 00:25
+    Player Hears Aural KB Feedback: milestone, 00:25,
 ```
 
-## Offsetting for Game Visual Sync
+> Notice that if your Demand and Feedback offsets are linked to the same offset,
+> you can't get this configuration. But to be fair, generally no one fine-tunes
+> this much.
 
-This is similar to the previous, except that we now don't need care about Game
-Aural Feedback. The solution is much simpler.
+Of course, this is configurable, let's say a player is more aurally oriented,
+where they want to sync the aural demand (the music) exactly on the KB feedback
+sound. As a compromise, they have to physically feel the hit slightly earlier,
+but the audio sync usually helps a lot. (This also mimics actual instruments
+closer!)
 
 ```mermaid
 gantt
@@ -520,21 +549,125 @@ gantt
   axisFormat %M:%S
 
   section Aural D.
-    -3ms: crit, 00:00, 00:03
-    Game Demands Aurally: milestone, 00:00,
-    Aural Demand Delay: 00:00, 00:06
-    Player Hears Aural Demand: active, milestone, 00:06,
+    +5ms: crit, 00:05, 00:10
+    Game Demands Aurally: milestone, 00:10,
+    Aural Demand Delay: 00:10, 00:25
+    Player Hears Aural Demand: crit, milestone, 00:25,
 
   section Visual D.
-    +2ms: crit, 00:02, 00:04
-    Game Demands Visually: milestone, 00:04,
-    Visual Demand Delay: 00:04, 00:06
-    Player Sees Visual Demand: active, milestone, 00:06,
+    +15ms: crit, 00:05, 00:20
+    Game Demands Visually: milestone, 00:20,
+    Visual Demand Delay: 00:20, 00:25
+    Player Sees Visual Demand: crit, milestone, 00:25,
 
   section KB Input
-    Player KB Input: active, milestone, 00:06,
+    Player KB Input: milestone, 00:15,
+
+  section Game Aural
+    Aural Game Feedback Delay: 00:15, 00:30
+    Player Hears Aural Game Feedback: milestone, 00:30,
 
   section Game Visual
-    Visual Game Feedback Delay: 00:06, 00:51
-    Player Sees Visual Game Feedback: crit, milestone, 00:51,
+    Visual Game Feedback Delay: 00:15, 00:40
+    Player Sees Visual Game Feedback: crit, milestone, 00:40,
+
+  section KB Feedback
+    Aural KB Feedback Delay: 00:15, 00:25
+    Player Hears Aural KB Feedback: crit, milestone, 00:25,
 ```
+
+> Here, notice that if your Demand and Feedback offsets are linked, it doesn't
+> matter since both Game Feedbacks are off.
+
+We still keep the Visual Game Feedback since that's still crucial in gameplay.
+But as explained earlier, it doesn't impact the sync much.
+
+## What about w/o Visual Offset?
+
+As mentioned, in VSRGs, players are often less sensitive to de-synced visuals
+from the audio. So as a compromise, it's likely fine. To illustrate this:
+
+```mermaid
+gantt
+  dateFormat mm:ss
+  axisFormat %M:%S
+
+  section Aural D.
+    +5ms: crit, 00:05, 00:10
+    Game Demands Aurally: milestone, 00:10,
+    Aural Demand Delay: 00:10, 00:25
+    Player Hears Aural Demand: crit, milestone, 00:25,
+
+  section Visual D.
+    Game Demands Visually: milestone, 00:05,
+    Visual Demand Delay: 00:05, 00:10
+    Player Sees Visual Demand: crit, milestone, 00:10,
+
+  section KB Input
+    Player KB Input: milestone, 00:15,
+
+  section Game Aural
+    Aural Game Feedback Delay: 00:15, 00:30
+    Player Hears Aural Game Feedback: milestone, 00:30,
+
+  section Game Visual
+    Visual Game Feedback Delay: 00:15, 00:40
+    Player Sees Visual Game Feedback: crit, milestone, 00:40,
+
+  section KB Feedback
+    Aural KB Feedback Delay: 00:15, 00:25
+    Player Hears Aural KB Feedback: crit, milestone, 00:25,
+```
+
+# Game Hit Sounds
+
+Now, do hit sounds in-game actually help?
+
+It depends on what one **wants to sync**. Though, giving the freedom of enabling
+and disabling hit sounds will always make the game more accessible.
+
+To recap, this is the general problem: we want to sync both KB Hit Sound and
+Game Hit Sound as they are both major sources of feedback.
+When they are de-synced, players will hear double feedback and can be
+disorientating. The biggest bottleneck is that we cannot delay the KB Feedback
+nor quicken the Game Aural Feedback, thus reaching a stalemate.
+
+```mermaid
+gantt
+  dateFormat mm:ss
+  axisFormat %M:%S
+  section KB Input
+    Player KB Input: milestone, 00:05,
+
+  section KB Feedback
+    Aural KB Feedback Delay: 00:05, 00:10
+    Player Hears Aural KB Feedback: crit, milestone, 00:10,
+
+  section Game Aural
+    Aural Game Feedback Delay: 00:05, 00:35
+    Player Hears Aural Game Feedback: crit, milestone, 00:35,
+```
+
+One way to work around this is to remove either source of feedback.
+The other is to perform proactive game hit sound feedback, where we
+predicatively play the Game Aural Feedback before the player hits the note
+
+```mermaid
+gantt
+  dateFormat mm:ss
+  axisFormat %M:%S
+  section KB Input
+    Player KB Input: milestone, 00:30,
+
+  section KB Feedback
+    Aural KB Feedback Delay: 00:30, 00:35
+    Player Hears Aural KB Feedback: crit, milestone, 00:35,
+
+  section Game Aural
+    Aural Game Feedback Delay: 00:05, 00:35
+    Player Hears Aural Game Feedback: crit, milestone, 00:35,
+```
+
+We recommend the reader to see the section for a more in-depth discussion for
+this.
+
