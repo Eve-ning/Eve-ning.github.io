@@ -63,9 +63,8 @@ Ideally, in a perfect world, we should **sense** these things sync exactly on
 each other:
 
 1. Keyboard Hit Sound (KB Feedback)
-2. Game Hit Sound (Game Feedback)
+2. Game Hit Sound/Aural Feedback (Game Feedback)
 3. Game Visual Feedback (Game Feedback)
-4. Game Music Sync ("Feedback")
 
 We extensively refer to these sources of feedback for the rest of the article.
 
