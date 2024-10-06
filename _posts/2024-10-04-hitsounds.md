@@ -2,14 +2,13 @@
 title: "Hit Sounds and Audio Offset impact on Syncing in Rhythm Games"
 tags: [ VSRG ]
 project:
-  status: wip
+  status: completed
 ---
 
-WIP Article.
-
-How do you sync every source of feedback in Rhythm Games? Are visual and audio
-offsets important? Furthermore, do Hit Sounds contribute positively or
-negatively to player experience?
+Hit Sounds, Keyboard Sounds are useful sources of feedback in Rhythm Games,
+though how do you sync them to songs to maximize accuracy with less effort?
+Furthermore, is just Music Offset sufficient for a Rhythm Game? We introduce
+the concept of an independent KB Latency Offset.
 
 <!--more-->
 
@@ -25,14 +24,13 @@ While there are other forms of feedback, such as
 - **Visual Feedback** in the form of hit lighting, judgements.
 - **Physical Feedback** from when you feel your hands hit the keyboard
 
-**Aural Feedback**, being the medium as the song is best suited as the most
-important feedback to accurately time every single action.
-
-However, the biggest problem that has plagued all Rhythm Games is that it's
-always less ideal to use the in-game Hit Sound Feedback.
+We focus on **Aural Feedback** in this post mainly because it's the same medium
+as the song. Its close alignment makes it worthwhile to optimize. While
+**Visual Feedback** comes close second, we believe that players are generally
+less time-sensitive due to it being a different medium.
 
 > **Disclaimer:** The offsets in the graphs below are roughly estimated to
-> simplify the point I'm making, though they can be analytically found through
+> simplify the points I'm making, though they can be analytically found through
 > experiments.
 
 ## Background
@@ -42,123 +40,180 @@ plays a single note.
 
 There are 4 critical timestamps to consider:
 
-1. When the input is **demanded** by the game
+1. When the input is **demanded** by the game using a **Music Cue**
 2. When the input is **provided** by the player
 3. When the input is **received** by the game
 4. When feedback is **received** by the player
 
-However, in the last step, if the player can hear both the KB Hit Sound and
-Game Hit Sound, they'll likely be at different timestamps, disorientating the
-player. Furthermore, the music should exactly sync whenever the Feedback is
-heard; because there are 2 time stamps, it's uncertain when it should play.
+We show this in a timeline
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
-  Game Music Feedback ?: active, milestone, 00:10,
-  Game Music Feedback ?: active, milestone, 00:35,
-  Game Demands KB Input: milestone, 00:05,
-  Player Provides KB Input: milestone, 00:05,
-  KB Feedback Delay: 00:05, 00:10
-  Player Hears KB Feedback: crit, milestone, 00:10,
-  Game Feedback Delay: 00:05, 00:35
-  Player Hears Game Feedback: crit, milestone, 00:35,
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
+  Music Cue: active, milestone, 025,
+  Music Cue Delay: active, 025, 030
+  Player Hears Music Cue: active, milestone, 030,
+  Player Provides KB Input: milestone, 000,
+  Game Feedback Delay: 000, 030
+  Player Hears Game Feedback: crit, milestone, 030,
+  KB Feedback Delay: 000, 005
+  Player Hears KB Feedback: crit, milestone, 005,
 ```
 
-This delay is however, inevitable due to physical limitations, it's impossible
-to hear the game feedback as fast as the tap on your keyboard.
+Firstly, the light blue elements indicate the music cues, **demanding** the
+player to press at that specific time. Here, the game plays the cue at 25
+milliseconds (ms), and due to how sound travels through air, there's some delay.
+We assume that delay through sound is 5ms. Thus, the player actually hears the
+cue at 30ms.
 
-### The Ideal Feedback Sync Scenario
+Next, we see that the player **provides** the KB Input, and similarly, there's a
+huge delay between KB Input and actually hearing the Game Feedback (Hit Sound).
+Therefore, players will need to input at 0ms, where the game will **receive**,
+process it and play it back at 30ms.
 
-To solve this, we have 3 choices, the players hear:
+It's no surprise that with good offset calibration, an accurate input will sync
+both the Music Cue and Game Feedback, affirming that the player is accurate
+without having to rely on Judgements. This is the default behavior of all Music
+Games.
 
-1. only the KB Feedback, synced to the music
-2. only the Game Feedback, synced to the music
-3. both feedback, exactly at the same time, also synced to the music
+It's important to understand the previous paragraph lays the entire motivation
+of syncing in the first place. If there was no Feedback nor Music Cues,
+there's no need to sync at all. We see that we also have a KB Feedback, the
+"Clack" sound. This happens much earlier because of how there's no need to be
+processed by the game.
 
-As far as we know, (3.) is generally impossible, however we'll discover an
-interesting workaround in the **Proactive Feedback** section.
+Finally, we see that, by default, if the player receives all forms of feedback,
+they will hear the Game and KB Feedback at different times, which makes it
+disorientating. We next explore options on how to fix this issue.
+
+### Syncing Feedback to Music Cues
+
+As we see above, there's 2 sources of feedback we can sync to the Music Cues,
+leading us to 3 methods of syncing:
+
+1. sync only the Game Feedback to the music
+2. sync only the KB Feedback to the music
+3. sync both feedback to the music
+
+Since we have the freedom to shift the Music Cue anywhere due to offsetting,
+(1.) and (2.) are easily achievable. Though (3.) is generally impossible as it's
+not possible to delay the KB Feedback, nor quicken the Game Feedback Delay as
+fast as the KB Feedback Delay. However, we'll discover an interesting workaround
+in the **Proactive Feedback** section.
+
+We illustrate the problem below:
+
+```mermaid
+gantt
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
+
+  section Game Sync
+    Music Cue: active, milestone, 030,
+    Music Cue Delay: active, 030, 035
+    Player Hears Music Cue: active, milestone, 035,
+    Player Provides KB Input: milestone, 005,
+    KB Feedback Delay: 005, 010
+    Player Hears KB Feedback: milestone, 010,
+    Game Feedback Delay: 005, 035
+    Player Hears Game Feedback: crit, milestone, 035,
+  section KB Sync
+    Music Cue: active, milestone, 005,
+    Music Cue Delay: active, 005, 010
+    Player Hears Music Cue: active, milestone, 010,
+    Player Provides KB Input: milestone, 005,
+    KB Feedback Delay: 005, 010
+    Player Hears KB Feedback: crit, milestone, 010,
+    Game Feedback Delay: 005, 035
+    Player Hears Game Feedback: milestone, 035,
+  section Both Synced ?
+    Music Cue ?: active, milestone, 020,
+    Music Cue Delay ?: active, 020, 025
+    Player Hears Music Cue ?: active, milestone, 025,
+    Player Provides KB Input: milestone, 005,
+    KB Feedback Delay: 005, 010
+    Player Hears KB Feedback: crit, milestone, 010,
+    Game Feedback Delay: 005, 035
+    Player Hears Game Feedback: crit, milestone, 035,
+```
 
 We discuss the major solutions many games do to *partially* reach this ideal
 setup.
 
 ## Reactive Feedback
 
-**Reactive Feedback** implies that the game only gives feedback **after** the
-player provides an input. In most Rhythm Games, they always use
-**reactive feedback**, and because of that, Game Feedback will always lag
-milliseconds after KB Feedback.
+From the previous sections, we've framed the problem with the constraint that
+all feedback are **reactive**.
+**Reactive Feedback** means the game only gives feedback **after** the
+player provides an input. Most Rhythm Games use **reactive feedback**, and
+because of that, Game Feedback will always lag milliseconds after KB Feedback.
 
-As mentioned, we have 3 choices, thankfully, just isolating the KB or Game
-Feedback is trivial
+Unsurprisingly, many players do not rely on both sources of feedback, therefore
+it's entirely acceptable that they only use just 1, or sometimes none.
 
-### Solution 1 & 2: Remove a Source of Feedback
+### Game Feedback Sync
 
-Unsurprisingly, many players do not rely on both sources of feedback.
-
-1. Players don headphones, mostly blocking out KB Feedback
-2. Players deafen Game Hit Sound/Feedback
-
-Furthermore, players can independently choose their preferred combination of
-feedback. The table below shows all possible combinations of feedback
-
-| KB | Game Audio | Sync       | Notes                                   |
-|----|------------|------------|-----------------------------------------|
-| O  | O          | Impossible | Impossible due to technical limitations |
-| O  |            | Possible   | w/o Headphones and no Game Feedback     |
-|    | O          | Possible   | w/ Headphones and Game Feedback         |
-
-We show this solution graphically below
-
-**SOLUTION 1**: Game Feedback only
+To achieve this, players don headphones, mostly blocking out KB Feedback while
+still enabling Game Hit Sounds.
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
 
-  Game Music Feedback: active, milestone, 00:35,
+  section Music
+    Music Cue: active, milestone, 025,
+    Music Cue Delay: active, 025, 030
+    Player Hears Music Cue: active, milestone, 030,
+
   section KB Input
-    Player KB Input: milestone, 00:05,
+    Player KB Input: milestone, 000,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:05, 00:10
-    Player Hears Aural KB Feedback: milestone, 00:10,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: milestone, 005,
 
   section Game Feedback
-    Aural Game Feedback Delay: 00:05, 00:35
-    Player Hears Aural Game Feedback: crit, milestone, 00:35,
+    Game Feedback Delay: 000, 030
+    Player Hears Game Feedback: crit, milestone, 030,
 ```
 
 Another solution could be to remove game feedback entirely.
 This solution brings the feedback much closer to the actual physical
 hit, which may feel more natural.
 
-**SOLUTION 2**: KB Feedback Only
+### KB Feedback Sync
+
+Sometimes, players play on speakers, or with headphones that has low noise
+suppression, allowing them to still hear the KB Feedback. In this case,
+Game Hit Sounds are disabled.
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
 
-  Game Music Feedback: active, milestone, 00:10,
+  section Music
+    Music Cue: active, milestone, 000,
+    Music Cue Delay: active, 000, 005
+    Player Hears Music Cue: active, milestone, 005,
+
   section KB Input
-    Player KB Input: milestone, 00:05,
+    Player KB Input: milestone, 000,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:05, 00:10
-    Player Hears Aural KB Feedback: crit, milestone, 00:10,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: crit, milestone, 005,
 
-  section Game Aural
-    Aural Game Feedback Delay: 00:05, 00:35
-    Player Hears Aural Game Feedback: milestone, 00:35,
+  section Game Feedback
+    Game Feedback Delay: 000, 030
+    Player Hears Game Feedback: milestone, 030,
 ```
-
-There are some solutions where it's still impossible though, mainly because
-the KB Feedback **cannot** be delayed physically. For example, if the player
-only removes the Game Visual Feedback, they will still run into the problem of
-syncing both KB and Game Aural Feedback without any solution.
 
 ## Proactive Feedback
 
@@ -169,23 +224,29 @@ same timestamp!
 
 This approach is definitely uncommon, we show how it works:
 
-**SOLUTION 3**: Game and KB Feedback Synced
+### Game and KB Feedback Sync
+
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
 
-  Game Music Feedback: active, milestone, 00:35,
+  section Music
+    Music Cue: active, milestone, 025,
+    Music Cue Delay: active, 025, 030
+    Player Hears Music Cue: active, milestone, 030,
+
   section KB Input
-    Player KB Input: milestone, 00:30,
+    Player KB Input: milestone, 025,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:30, 00:35
-    Player Hears Aural KB Feedback: crit, milestone, 00:35,
+    KB Feedback Delay: 025, 030
+    Player Hears KB Feedback: crit, milestone, 030,
 
-  section Game Aural
-    Aural Game Feedback Delay: 00:05, 00:35
-    Player Hears Aural Game Feedback: crit, milestone, 00:35,
+  section Game Feedback
+    Game Feedback Delay: 000, 030
+    Player Hears Game Feedback: crit, milestone, 030,
 ```
 
 We see that because we're not limited to **reacting** to the KB Input, we have
@@ -197,7 +258,7 @@ As expected, there's one gaping problem here:
 > It's inconclusive due to lack of data, however it's worth to mention that
 > it's successfully implemented in the game
 > [Rhythm Doctor](https://rhythmdr.com/). Where its in-game hit sound is a
-> crucial element in the game.
+> crucial element in the game, which likely contributed to this design decision.
 
 Note that this option must explicitly coded within the game, and not a simple
 customizable option Players can change freely, like using headphones or not.
@@ -212,355 +273,309 @@ For example, if the player hits around 35ms earlier than expected:
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
 
-  Game Music Feedback: active, milestone, 00:35,
+  section Music
+    Music Cue: active, milestone, 025,
+    Music Cue Delay: active, 025, 030
+    Player Hears Music Cue: active, milestone, 030,
+
   section KB Input
-    Player KB Input: milestone, 00:00,
+    Player KB Input: milestone, 000,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:00, 00:05
-    Player Hears Aural KB Feedback: crit, milestone, 00:05,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: crit, milestone, 005,
 
-  section Game Aural
-    Aural Game Feedback Delay: 00:00, 00:30
-    Player Hears Aural Game Feedback: crit, milestone, 00:30,
+  section Game Feedback
+    Game Feedback Delay: 000, 030
+    Player Hears Game Feedback: crit, milestone, 030,
 ```
 
 Though, this may not be **that** crucial when players are generally accurate.
 
-## Expect Input with Latency
+## Expecting Input with Configurable Latency
 
-Before we go further, we need to quantify the concept of demand for feedback.
-Generally, when the game demands, it signals the player to input **now**.
+Before we go further, we need to make a point that **latency** is different from
+audio delay. When the game plays Music Cue, the time it should expect to receive
+the input must add the KB Latency, which is variable.
 
-This has a simple yet surprising consequence, the timing where the game expects
-to receive the input **must allow for a variable latency delay**, independent
-of the music.
-
-Take for example:
+Take for example, if we use 2 different keyboards of different latency, the
+game should expect them at different timings.
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
-  tickInterval 5second
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
 
-  Game Music Feedback: active, milestone, 00:10,
+  section Music
+    Music Cue: active, milestone, 000,
+    Music Cue Delay: active, 000, 005
+    Player Hears Music Cue: active, milestone, 005,
 
-  section KB Input
-    Player KB Input: milestone, 00:05,
-    Latency: 00:05, 00:15
-    Game Receives Input: crit, milestone, 00:15
+  section KB Input 1
+    Player High Latency KB Input: milestone, 000,
+    High Latency: 000, 025
+    Game Receives Input: crit, milestone, 025
+
+  section KB Input 2
+    Player Low Latency KB Input: milestone, 000,
+    Low Latency: 000, 015
+    Game Receives Input: crit, milestone, 015,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:05, 00:10
-    Player Hears Aural KB Feedback: crit, milestone, 00:10,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: crit, milestone, 005,
 ```
 
-Very likely, you'll hear the KB Feedback way before the game knows you've input
-the key. With different player profiles, this latency must be adjustable.
+This means that the game **must** include a way to adjust for this latency,
+independent of the audio delay.
 
 ## Summary
 
 Finally, we piece together everything we find.
 
-In **Reactive Feedback**
+We have 3 feedback sync scenarios:
 
-1. The player should predict when the Game Music Feedback will play, and because
-   sound has some delay, will hit slightly earlier, indicated by Player KB
-   Input.
-2. The player will then hear the KB Hit Sound as feedback
-3. The game should expect the KB input after some latency, providing accuracy
-   feedback.
-4. The game will then play its own Game Hit Sound as feedback.
+1. (Reactive Feedback) **Game Feedback**: This is the default behavior of many
+   games, where the in-game hitsounds sync exactly to the music. Players will
+   often use headphones to dampen the sound of KB Feedback.
+2. (Reactive Feedback) **KB Feedback**: This is usually non-default, players
+   will have to shift *forward* the Music Cue to achieve this sync.
+3. (Proactive Feedback) **Game & KB Feedback**: This only applies to a selected
+   set of Rhythm Games. In this case, Game Feedback are automatically played
+   perfectly ahead of time to sync with KB Feedback and Music Cues.
 
-As mentioned, it's optional whether the player will hear the KB Hit Sound, or
-the Game Hit Sound.
-
-```mermaid
-gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
-  tickInterval 5second
-
-  Game Music Feedback (KB): active, milestone, 00:10,
-  Game Music Feedback (Game): active, milestone, 00:35,
-  section KB Input
-    Player KB Input: milestone, 00:05,
-    Latency: 00:05, 00:15
-    Game Expects Receive Input: milestone, 00:15
-
-  section KB Feedback
-    Aural KB Feedback Delay: 00:05, 00:10
-    Player Hears KB Feedback: crit, milestone, 00:10,
-
-  section Game Feedback
-    Game Feedback Delay: 00:05, 00:35
-    Player Hears Game Feedback: crit, milestone, 00:35,
-```
-
-In **Proactive Feedback**
-
-Much like Reactive Feedback, the sequence of events can change slightly, however
-the perk of **Proactive Feedback** is the possibility to sync the KB, Game and
-Music Feedback together
-
-```mermaid
-gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
-
-  Game Music Feedback: active, milestone, 00:35,
-  section KB Input
-    Player KB Input: milestone, 00:30,
-    Latency: 00:30, 00:40
-    Game Expects Receive Input: milestone, 00:40
-
-  section KB Feedback
-    KB Feedback Delay: 00:30, 00:35
-    Player Hears KB Feedback: crit, milestone, 00:35,
-
-  section Game Feedback
-    Game Feedback Delay: 00:05, 00:35
-    Player Hears Game Feedback: crit, milestone, 00:35,
-```
-
-# Offsetting
+# Offset
 
 Surprisingly, despite years of VSRGs being made, there's still contention on
 if offsetting is necessary, and what offsets are needed.
 
 As mentioned in the previous sections, there are 2 very important offsets.
 
-1. Music Feedback Offset: A +- x millisecond config on the delay of the song.
-2. KB Latency Offset: A +- x millisecond config on the delay between the player
+1. Music Offset: A +- millisecond config on the delay of the song.
+2. KB Latency Offset: A +- millisecond config on the delay between the player
    hitting the KB and the game receiving the input.
 
-> (WIP) Below needs changing
+To give an example, we show the problems that players tend to encounter during
+Rhythm Games, and we'll show how these can be fixed through these offsets.
 
-Not surprisingly, these are crucial configurations for highly competitive games
-where every setting counts.
+## Music Offset
 
-To give an example, a player measured this weird de-synced Demand and Feedback
-graph when playing.
+### Re-syncing Music
 
-```mermaid
-gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
-
-  section Aural D.
-    Game Demands Aurally: milestone, 00:05,
-    Aural Demand Delay: 00:05, 00:20
-    Player Hears Aural Demand: active, milestone, 00:20,
-
-  section Visual D.
-    Game Demands Visually: milestone, 00:05,
-    Visual Demand Delay: 00:05, 00:10
-    Player Sees Visual Demand: active, milestone, 00:10,
-
-  section KB Input
-    Player KB Input: active, milestone, 00:15,
-
-  section Game Aural
-    Aural Game Feedback Delay: 00:15, 00:30
-    Player Hears Aural Game Feedback: crit, milestone, 00:30,
-
-  section Game Visual
-    Visual Game Feedback Delay: 00:15, 00:40
-    Player Sees Visual Game Feedback: crit, milestone, 00:40,
-
-  section KB Feedback
-    Aural KB Feedback Delay: 00:15, 00:25
-    Player Hears Aural KB Feedback: crit, milestone, 00:25,
-```
-
-> This long of an Aural Demand delay is surprisingly common when you play on
-> speakers!
-
-Let's say they want to sync
-
-1. (Light Blue) When they hit physically to the Aural and Visual Demand
-2. (Red) When they receive Aural and Visual Feedback
-3. Ignoring the Aural KB Feedback
-
-We can apply:
-
-1. -5ms Delay to the Aural Demand
-2. +5ms Delay to the Visual Demand
-3. +10ms Delay to the Aural Feedback
+Most commonly, due to human error, music can be de-synced. What this means is
+that the "perfect" input will result in the Music Cue playing off-sync.
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
 
-  section Aural D.
-    -5ms: crit, 00:00, 00:05
-    Game Demands Aurally: milestone, 00:00,
-    Aural Demand Delay: 00:00, 00:15
-    Player Hears Aural Demand: active, milestone, 00:15,
-
-  section Visual D.
-    +5ms: crit, 00:05, 00:10
-    Game Demands Visually: milestone, 00:10,
-    Visual Demand Delay: 00:10, 00:15
-    Player Sees Visual Demand: active, milestone, 00:15,
+  section Music
+    Music Cue: active, milestone, 020,
+    Music Cue Delay: active, 020, 025
+    Player Hears Music Cue: active, milestone, 025,
 
   section KB Input
-    Player KB Input: active, milestone, 00:15,
-
-  section Game Aural
-    Aural Game Feedback Delay: 00:15, 00:30
-    +10ms: crit, 00:30, 00:40
-    Player Hears Aural Game Feedback: crit, milestone, 00:40,
-
-  section Game Visual
-    Visual Game Feedback Delay: 00:15, 00:40
-    Player Sees Visual Game Feedback: crit, milestone, 00:40,
+    Player KB Input: milestone, 000,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:15, 00:25
-    Player Hears Aural KB Feedback: milestone, 00:25,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: milestone, 005,
+
+  section Game Feedback
+    Game Feedback Delay: 000, 030
+    Player Hears Game Feedback: crit, milestone, 030,
 ```
 
-> Notice that if your Demand and Feedback offsets are linked to the same offset,
-> you can't get this configuration. But to be fair, generally no one fine-tunes
-> this much.
+So, what the player will feel is that they are consistently "rushing"/"dragging"
+in order to play perfectly.
 
-Of course, this is configurable, let's say a player is more aurally oriented,
-where they want to sync the aural demand (the music) exactly on the KB feedback
-sound. As a compromise, they have to physically feel the hit slightly earlier,
-but the audio sync usually helps a lot. (This also mimics actual instruments
-closer!)
+The simple solution is to just allow players to add a delay to the music.
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
 
-  section Aural D.
-    +5ms: crit, 00:05, 00:10
-    Game Demands Aurally: milestone, 00:10,
-    Aural Demand Delay: 00:10, 00:25
-    Player Hears Aural Demand: crit, milestone, 00:25,
-
-  section Visual D.
-    +15ms: crit, 00:05, 00:20
-    Game Demands Visually: milestone, 00:20,
-    Visual Demand Delay: 00:20, 00:25
-    Player Sees Visual Demand: crit, milestone, 00:25,
+  section Music
+    +5ms: crit, 020, 025
+    Music Cue: active, milestone, 025,
+    Music Cue Delay: active, 025, 030
+    Player Hears Music Cue: active, milestone, 030,
 
   section KB Input
-    Player KB Input: milestone, 00:15,
-
-  section Game Aural
-    Aural Game Feedback Delay: 00:15, 00:30
-    Player Hears Aural Game Feedback: milestone, 00:30,
-
-  section Game Visual
-    Visual Game Feedback Delay: 00:15, 00:40
-    Player Sees Visual Game Feedback: crit, milestone, 00:40,
+    Player KB Input: milestone, 000,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:15, 00:25
-    Player Hears Aural KB Feedback: crit, milestone, 00:25,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: milestone, 005,
+
+  section Game Feedback
+    Game Feedback Delay: 000, 030
+    Player Hears Game Feedback: crit, milestone, 030,
 ```
 
-> Here, notice that if your Demand and Feedback offsets are linked, it doesn't
-> matter since both Game Feedbacks are off.
+We show here what we need to do for Game Syncing, this same ideal applies to KB
+Sync.
 
-We still keep the Visual Game Feedback since that's still crucial in gameplay.
-But as explained earlier, it doesn't impact the sync much.
+### KB Sync
 
-## What about w/o Visual Offset?
-
-As mentioned, in VSRGs, players are often less sensitive to de-synced visuals
-from the audio. So as a compromise, it's likely fine. To illustrate this:
+One of the more useful cases of offsetting is to sync the music exactly onto
+the KB Feedback sound. As mentioned, this is usually the non-default behavior,
+and it can vary wildly depending on the setup. But in general, this usually
+results in moving the Music Cue forward by a huge amount.
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
 
-  section Aural D.
-    +5ms: crit, 00:05, 00:10
-    Game Demands Aurally: milestone, 00:10,
-    Aural Demand Delay: 00:10, 00:25
-    Player Hears Aural Demand: crit, milestone, 00:25,
-
-  section Visual D.
-    Game Demands Visually: milestone, 00:05,
-    Visual Demand Delay: 00:05, 00:10
-    Player Sees Visual Demand: crit, milestone, 00:10,
+  section Music
+    -25ms: crit, 000, 025
+    Music Cue: active, milestone, 000,
+    Music Cue Delay: active, 000, 005
+    Player Hears Music Cue: active, milestone, 005,
 
   section KB Input
-    Player KB Input: milestone, 00:15,
-
-  section Game Aural
-    Aural Game Feedback Delay: 00:15, 00:30
-    Player Hears Aural Game Feedback: milestone, 00:30,
-
-  section Game Visual
-    Visual Game Feedback Delay: 00:15, 00:40
-    Player Sees Visual Game Feedback: crit, milestone, 00:40,
+    Player KB Input: milestone, 000,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:15, 00:25
-    Player Hears Aural KB Feedback: crit, milestone, 00:25,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: crit, milestone, 005,
+
+  section Game Feedback
+    Game Feedback Delay: 000, 030
+    Player Hears Game Feedback: milestone, 030,
 ```
 
-# Game Hit Sounds
-
-Now, do hit sounds in-game actually help?
-
-It depends on what one **wants to sync**. Though, giving the freedom of enabling
-and disabling hit sounds will always make the game more accessible.
-
-To recap, this is the general problem: we want to sync both KB Hit Sound and
-Game Hit Sound as they are both major sources of feedback.
-When they are de-synced, players will hear double feedback and can be
-disorientating. The biggest bottleneck is that we cannot delay the KB Feedback
-nor quicken the Game Aural Feedback, thus reaching a stalemate.
+As mentioned, this **varies wildly**. For our setup, we use the TV speaker,
+which contributes a massive delay. We often use -150ms or more of delay to sync.
+It's likely attributed to audio enhancement steps within certain speakers.
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 20millisecond
+
+  section Music
+    -150ms: crit, 000, 150
+    Music Cue: active, milestone, 000,
+    Music Cue Delay: active, 000, 005
+    Player Hears Music Cue: active, milestone, 005,
+
   section KB Input
-    Player KB Input: milestone, 00:05,
+    Player KB Input: milestone, 000,
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:05, 00:10
-    Player Hears Aural KB Feedback: crit, milestone, 00:10,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: crit, milestone, 005,
 
-  section Game Aural
-    Aural Game Feedback Delay: 00:05, 00:35
-    Player Hears Aural Game Feedback: crit, milestone, 00:35,
+  section Game Feedback
+    Game Feedback Delay: 000, 155
+    Player Hears Game Feedback: milestone, 155,
 ```
 
-One way to work around this is to remove either source of feedback.
-The other is to perform proactive game hit sound feedback, where we
-predicatively play the Game Aural Feedback before the player hits the note
+Regardless, this further enforces the idea that Music Offset configuration is
+a **must-have** in Rhythm Games.
+
+## KB Latency Offset
+
+We'll borrow the standard case to illustrate why some games **may** need this
+offset.
+
+The question is, when do we **evaluate** the perfect KB Hit Input?
+Ideally, it's evaluated whenever you expect the KB Input to be executed, plus
+the KB Latency, which we emphasize has a large range.
+
+Keep in mind that the time that the game **expects** the perfect input is
+still independent of the Music Offset.
 
 ```mermaid
 gantt
-  dateFormat mm:ss
-  axisFormat %M:%S
+  dateFormat SSS
+  axisFormat %L ms
+  tickInterval 5millisecond
+
+  section Music
+    Music Cue: active, milestone, 025,
+    Music Cue Delay: active, 025, 030
+    Player Hears Music Cue: active, milestone, 030,
+
   section KB Input
-    Player KB Input: milestone, 00:30,
+    Player KB Input: milestone, 000,
+    High Latency: 000, 030
+    Game Receives Input: milestone, 030
+    Low Latency: 000, 010
+    Game Receives Input: milestone, 010
 
   section KB Feedback
-    Aural KB Feedback Delay: 00:30, 00:35
-    Player Hears Aural KB Feedback: crit, milestone, 00:35,
+    KB Feedback Delay: 000, 005
+    Player Hears KB Feedback: milestone, 005,
 
-  section Game Aural
-    Aural Game Feedback Delay: 00:05, 00:35
-    Player Hears Aural Game Feedback: crit, milestone, 00:35,
+  section Game Feedback
+    Game Feedback Delay: 000, 030
+    Player Hears Game Feedback: crit, milestone, 030,
 ```
 
-We recommend the reader to see the section for a more in-depth discussion for
-this.
+So, unless the game can somehow always know the exact Keyboard Latency
+(not possible), if it's even accounted for, it **should** allow the player to
+nudge it.
 
+### KB Latency Ranges
+
+Thanks to [RTINGS Keyboard Table](https://www.rtings.com/keyboard/tools/table)
+they have a large range of keyboards tested with Multi or Single Key Latency.
+From a quick look, they can range from sub 1ms to 30ms.
+
+### KB Release Latencies are different
+
+Taking a look at any keyboard on the RTINGS Table, we see that release latency
+will almost always be significantly delayed from the input latency. So
+technically, for full configurability, the input and release latency needs to be
+separately configured.
+
+## Summary
+
+For any Rhythm Game, there needs to be **at least** the ability to offset the
+music, and up to ranges of likely +-250ms. More than likely, though, the most
+players will not delay the music, instead, make it play earlier.
+
+For Rhythm Games that wants to allow for **min-maxing**, KB Latency is something
+to consider. To my knowledge, there isn't any Rhythm Game that allows for this
+configuration, so you may have to take our word for it. It's worthwhile to note
+that likely no one will use this configuration as it's obscure, but it may be
+game changing for some.
+
+# Annex
+
+## Visual Offset
+
+As briefly mentioned players are often less sensitive to de-synced visuals. This
+is largely attributed to the fact that it's of a different "sense" than audio.
+While I won't dismiss that they can be useful, especially when players approach
+min-maxing, it's likely worth to discuss in another article.
+
+> Note that only elements that are independent of the user inputs can have
+> **negative offset**, so objects like notes, effects that are predefined are
+> possible. Reactive elements like the hit lightning cannot be shifted forward.
+
+## KB Feedback for Certain Games
+
+It's not uncommon to hear that osu!standard players generally use hit sounds,
+being confused on why osu!mania players don't follow. The reason is simple:
+
+> Commonly, osu!standard players can't hear their keyboard. osu!mania players
+> hear too much of their keyboard.
+
+Unsurprisingly, osu!mania players hit their keyboard, very loudly. Therefore,
+it may be worthwhile to use KB Hit Sound Sync.
+However, osu!standard players generally don't, so they use Game Hit Sound Sync.
