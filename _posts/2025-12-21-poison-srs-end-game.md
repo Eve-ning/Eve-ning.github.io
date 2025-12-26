@@ -26,7 +26,7 @@ already invested into BG's PSRS but have additional currency to fine-tune, this
 build can improve DPS by 30~50%, double EHP, and has improved QoL in many
 fronts.
 
-The full build is estimated to be around 50~100 Divines. Though, improvements to
+The full build is estimated to be around 30~50 Divines. Though, improvements to
 the BG's PSRS build can be incremental. For example, small investments such as
 [Dual Clusters (10D+)](#changing-single-to-dual-cluster) or
 [Thread of Hope (0.1D ~ 3D)](#thread-of-hope) can make a huge difference in the
