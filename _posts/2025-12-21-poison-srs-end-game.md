@@ -899,14 +899,14 @@ These are all workarounds that in the end, will result in barely any net gain.
 
 There are a few spectres we can pick from:
 
-| Spectre                                      | Purpose                        | Priority | BG's | Ours  |
-|----------------------------------------------|--------------------------------|----------|------|-------|
-| Hulking Miscreation [^hulking]               | Damage                         | High     |      | Yes   |
-| Perfect Judgemental Spirit [^p-judgemental]  | Discipline & Damage            | High     | Yes  | Yes   |
-| Perfect Guardian Turtle [^p-turtle]          | Determination & Phys Reduction | Mid      | Yes  | Yes   |
-| Perfect Warlord [^p-warlord]                 | Endurance Charge & Vitality    | Mid      | Yes  | Yes   |
-| Perfect Primal Thunderbird [^p-primal]       | Grace                          | Mid      |      | Maybe |
-| Perfect Forest Warrior [^p-forest-warrior]   | Onslaught & Culling Strike     | Low      | Yes  |       |
+| Spectre                                     | Purpose                        | Priority | BG's | Ours  |
+|---------------------------------------------|--------------------------------|----------|------|-------|
+| Hulking Miscreation [^hulking]              | Damage                         | High     |      | Yes   |
+| Perfect Judgemental Spirit [^p-judgemental] | Discipline & Damage            | High     | Yes  | Yes   |
+| Perfect Guardian Turtle [^p-turtle]         | Determination & Phys Reduction | Mid      | Yes  | Yes   |
+| Perfect Warlord [^p-warlord]                | Endurance Charge & Vitality    | Mid      | Yes  | Yes   |
+| Perfect Primal Thunderbird [^p-primal]      | Grace                          | Mid      |      | Maybe |
+| Perfect Forest Warrior [^p-forest-warrior]  | Onslaught & Culling Strike     | Low      | Yes  |       |
 
 We recommend picking the first 4, notably starting with Hulking Miscreation as
 it's one of the cheapest yet most impactful spectres. Followed by Perfect
