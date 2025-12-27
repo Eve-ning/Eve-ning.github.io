@@ -874,17 +874,19 @@ We felt that it's rather wasteful to double cast Determination[^determination]
 and Discipline[^discipline], thus we just left them for spectres.
 
 We also note that there's 1 less 50%-Reservation Aura we cast compared to BG's
-PSRS. Notably, we would've included Malevolence[^malevolence] in the build if we
-had more sockets.
+PSRS. Notably, Malevolence[^malevolence] can be swapped with Grace if necessary.
+We find that this can be useful for 1-cycling some bosses.
 
-> If we took out the Abyssal Socket, we'd lack 1 socket to max out Amanamu's
-> Gaze[^amanamus]. Malevolence does increase the DPS more than the lost DPS,
-> but we still do not have enough Mana Reservation to account for the massive
-> 50%.
->
-> To solve that, we need to slot in an Enlighten[^enlighten]... and respec some
-> passives to Mana Reservation, or perhaps roll Mana Reservation on a helmet.
-> These are all workarounds that in the end, will result in barely any net gain.
+### Squeezing in another 50% Aura is difficult
+
+If we took out the Abyssal Socket, we'd lack 1 socket to max out Amanamu's
+Gaze[^amanamus]. Malevolence does increase the DPS more than the lost DPS,
+but we still do not have enough Mana Reservation to account for the massive
+50%.
+
+To solve that, we need to slot in an Enlighten[^enlighten]... and respec some
+passives to Mana Reservation, or perhaps roll Mana Reservation on a helmet.
+These are all workarounds that in the end, will result in barely any net gain.
 
 ## Changes to Spectres
 
