@@ -21,6 +21,11 @@ that makes this build more T17/Uber+ comfortable.
 
 # Our PSRS (Evening's PSRS)
 
+| Build Links                                                                        |
+|------------------------------------------------------------------------------------|
+| [PoB https://pobb.in/2gvpjfutkZbd](https://pobb.in/2gvpjfutkZbd)                   |
+| [Maxroll https://maxroll.gg/poe/pob/9zu4v0ux](https://maxroll.gg/poe/pob/9zu4v0ux) |
+
 Our version of the PSRS is an end-game focused variant of BG's PSRS. If you're
 already invested into BG's PSRS but have additional currency to fine-tune, this
 build can improve DPS by 30~50%, double EHP, and has improved QoL in many
@@ -76,31 +81,31 @@ These are our key equips
 
 As a bird's eye comparison with BG's PSRS, these are the significant changes.
 
-| Category             | BG's PSRS                                                                | Our PSRS                                                           | Notes                                                                      |
-|----------------------|--------------------------------------------------------------------------|--------------------------------------------------------------------|----------------------------------------------------------------------------|
-| Investment           | 5 ~ 50+D (*)                                                             | 30 ~ 50D                                                           | It's not clear on BG's investment for end-game.                            |
-| DPS (Uber)           | 18M                                                                      | 27M                                                                | Non-Uber hits the DoT cap, which is not representative                     |
-| EHP (No Flask/Flask) | 71K/114K                                                                 | 223K/270K                                                          | BG's uses Progenesis while we didn't, which may be a bit inflated          |
-| Keystones            | Eldritch Battery[^eb], Mind over Matter[^mom], Glancing Blows[^glancing] | None                                                               |                                                                            |
-| Block                | Capped with Glancing Blows                                               | Capped                                                             |                                                                            |
-| Suppress             | Capped                                                                   | None                                                               |                                                                            |
-| Armour               | High Priority                                                            | Medium Priority                                                    |                                                                            |
-| Evasion              | Low Priority                                                             | Medium Priority                                                    |                                                                            |
-| Energy Shield        | Medium Priority                                                          | Medium Priority                                                    | ES is med. priority in BG's build as MoM delegates only 40% damage to Mana |
-| Life                 | High Priority                                                            | Medium Priority                                                    |                                                                            |
-| Clusters             | 1                                                                        | 2                                                                  |                                                                            |
-| Spectres             | P. Judgemental, P. Forest W., P. Turtle, P. Warlord                      | P. Judgemental, Hulking, P. Turtle, P. Warlord                     | (**)                                                                       |
-| Flasks               | Granite, Silver, Quartz, Progenesis                                      | Quicksilver, Basalt                                                |                                                                            |
-| Weapon               | United in Dream / Convoking (+1 Minion +1 Spell)                         | United in Dream                                                    |                                                                            |
-| Helmet               | Suppress & +2 All Minion                                                 | +2 All Minion                                                      |                                                                            |
-| Gloves               | Suppress                                                                 | +2 Socketed Minion                                                 | Roles of Gloves and Boots can swap                                         |
-| Boots                | Suppress                                                                 | 1 Abyssal Socket                                                   | Roles of Gloves and Boots can swap                                         |
-| Anoint               | Death Attunement (+1 Spectre)                                            | As the Mountain (+12% Attack Block)                                |                                                                            |
-| Jewels               | Amanamu's, Green Nightmare, 5 Ghastly, 1 Cluster                         | Amanamu's, 2 Forbidden, 5 Ghastly, 2 Cluster, 1 Thread, 2 Mega     |                                                                            |
-| Forbidden Jewels     | None                                                                     | Void Beacon                                                        |                                                                            |
-| Minion Recovery      | Minion Def. Mastery: Minions Recover 5% on Minion Death                  | Life from Death: Minions Recover 4% on Minion Death                |                                                                            |
-| Curse-Offering Loop  | Arcanist Brand / Convoking Trigger Wand                                  | Arcanist Brand                                                     |                                                                            |
-| Auras                | Envy, Det., Haste, Malev, Disc., T. Shield, **Vit.**                     | Envy, V. Grace, V. Haste, T. Shield, **Vit.**, **Det.**, **Disc.** | **Bold: Provided by Spectres**  (***)                                      |
+| Category             | BG's PSRS                                               | Our PSRS                                                      | Notes                                                  |
+|----------------------|---------------------------------------------------------|---------------------------------------------------------------|--------------------------------------------------------|
+| Investment           | 5 ~ 50+D (*)                                            | 30 ~ 50D                                                      | It's not clear on BG's investment for end-game.        |
+| DPS (Uber)           | 18M                                                     | 27M                                                           | Non-Uber hits the DoT cap, which isn't representative  |
+| EHP (No Flask/Flask) | 71K/114K                                                | 317K/465K                                                     | BG's uses Progenesis while we didn't                   |
+| Keystones            | Eldritch Battery, Mind over Matter, Glancing Blows      | None                                                          |                                                        |
+| Block                | Capped with Glancing Blows                              | Capped                                                        |                                                        |
+| Suppress             | Capped                                                  | None                                                          |                                                        |
+| Armour               | High Priority                                           | Medium Priority                                               |                                                        |
+| Evasion              | Low Priority                                            | Medium Priority                                               |                                                        |
+| Energy Shield        | Medium Priority                                         | Medium Priority                                               | ES is medium in BG's as MoM delegates only 40% to Mana |
+| Life                 | High Priority                                           | Medium Priority                                               |                                                        |
+| Clusters             | 1                                                       | 2                                                             |                                                        |
+| Spectres             | P. Judgemental, P. Forest W., P. Turtle, P. Warlord     | P. Judgemental, Hulking, P. Turtle, P. Warlord                | (**)                                                   |
+| Flasks               | Granite, Silver, Quartz, Progenesis                     | Quicksilver, Basalt                                           |                                                        |
+| Weapon               | United in Dream / Convoking (+1 Minion +1 Spell)        | United in Dream                                               |                                                        |
+| Helmet               | Suppress & +2 All Minion                                | +2 All Minion                                                 |                                                        |
+| Gloves               | Suppress                                                | +2 Socketed Minion                                            | Roles of Gloves and Boots can swap                     |
+| Boots                | Suppress                                                | 1 Abyssal Socket                                              | Roles of Gloves and Boots can swap                     |
+| Anoint               | Death Attunement (+1 Spectre)                           | As the Mountain (+12% Attack Block)                           |                                                        |
+| Jewels               | Amanamu's, Green Nightmare, 5 Ghastly, 1 Cluster        | Amanamu's, 4 Ghastly, 2 Cluster, 1 Thread, 2 Megalomaniac     |                                                        |
+| Forbidden Jewels     | None                                                    | Void Beacon                                                   |                                                        |
+| Minion Recovery      | Minion Def. Mastery: Minions Recover 5% on Minion Death | Life from Death: Minions Recover 4% on Minion Death           |                                                        |
+| Curse-Offering Loop  | Arcanist Brand / Convoking Trigger Wand                 | Arcanist Brand                                                |                                                        |
+| Auras                | Envy, Det., Haste, Malev, Disc., T.S., **Vit.**         | Envy, V. Grace, V. Haste, T.S., **Vit.**, **Det.**, **Disc.** | **Bold: Provided by Spectres**  (***)                  |
 
 > (*) +3 Covenant[^covenant] is 500D+ and Progenesis is 100D+, it's not build
 > critical to have these 2 pieces so we excluded it from the pricing.
@@ -116,7 +121,7 @@ As a bird's eye comparison with BG's PSRS, these are the significant changes.
 > - Det.: Determination (Provided by P. Turtle) [^determination]
 > - Malev: Malevolence [^malevolence]
 > - Disc.: Discipline (Provided by P. Judgemental) [^discipline]
-> - T. Shield: Tempest Shield [^tempest-shield]
+> - T.S.: Tempest Shield [^tempest-shield]
 > - Vit.: Vitality (Provided by P. Warlord) [^vitality]
 
 # BG's PSRS
@@ -141,19 +146,21 @@ The poison damage dealt **per second** is 30% of the flat Physical and Chaos
 damage dealt. Each poison lasts for 2 seconds by default. Therefore, the poison
 dealt is 60% in total over the 2 seconds.
 
-## Aside: End Game Min Max (Overkill) Loadout
+## Referencing the End Game Min Max (Overkill) Loadout
 
-We need to address a possible elephant in the room.
-In BG's PoB[^bgpob], they provided an alternative loadout that represents what
-an end-game overkill setup could look like, under "End Game Min Max (Overkill)".
+In BG's PoB[^bgpob], they provided a loadout that represents what an end-game
+overkill setup could look like, under "End Game Min Max (Overkill)".
 In our opinion, this setup is not nearly as polished as the non-overkill
-variant, we view it as more of a pipe dream than a well-calculated extension of
-their SRS.
+variant.
 
 > This is not a critique on the intention of the design, as it's clearly
 > intended to be less meticulous.
-> We want to raise attention to its details to prevent players from falling into
-> folly, blind copy and pasting of its pieces.
+> We'll occasionally raise attention to some truly overkill details to prevent
+> players from falling into folly, blind copy and pasting of its pieces.
+
+Therefore, we'll **selectively pick better ideas** from it and combining it
+with the non-endgame loadout. This gives us a more balanced view when comparing
+against our loadout.
 
 Our reasoning pivots on an eyeball justification of how much value each piece
 could bring versus its cost. Pieces such as:
@@ -286,6 +293,7 @@ using
 Though, there are some other avenues:
 
 - Boots Delve Mod: +2 to Level of Socketed Minion Skill Gems
+- Gloves Delve Mod: +2 to Level of Socketed Minion Skill Gems
 - Empower[^empower]: +2 to Supported Skill Gems
 
 > We don't recommend Empower unless absolutely necessary, as socketing Raise
@@ -323,7 +331,7 @@ BG's PSRS chooses the following spectres:
 - Perfect Warlord[^p-warlord]
   > Casts Vitality[^vitality] & grants Endurance charges.
 
-We additionally recommend
+We additionally recommend (and I'm pretty sure they've previously recommended):
 
 - Hulking Miscreation[^hulking] as it also grants SRS more Damage and increased
   30% Attack Speed.
@@ -381,7 +389,7 @@ Crown of the Tyrant[^tyrant] is just a flat damage increase.
 
 Our build departs with many concepts of BG's PSRS but still keeps several tried
 and tested strategies (across several leagues) intact. During our testing, we
-consistently challenged core-designs with alternatives and we found many areas
+consistently challenged core-designs with alternatives, and found many areas
 of improvement which we have documented below.
 
 There's quite a few changes: we'll explain the motivations of each with respect
@@ -389,9 +397,9 @@ to the above design choices. We'd like to emphasize that these motivations pivot
 on the assumption of end-game (>=T16 Maps), thus may not be as impactful if the
 character is not comfortably there yet.
 
-## Re-evaluating EB & MoM & Aegis
+## Re-evaluating EB & MoM & Aegis & Glancing
 
-Despite many benefits of synergy between these three, our test plays uncover
+Despite many benefits of synergy between these, our test plays uncover
 that it's not foolproof, with its fault amplified in late-game content.
 
 ### Poor DoT Mitigation with EB & MoM
@@ -827,6 +835,22 @@ In our calculations, it does increase damage, though we don't find that it's
 worth it. A quick market survey of a subpar replica costs around 70D. We feel
 that it's just better to stick with United in Dream.
 
+## Runegrafts
+
+We additionally take 2 Runegrafts, which are good QoL
+
+- Runegraft of the Warp[^rune-warp]
+  > - Buffs on you expire 30% slower
+  > - Debuffs on you expire 30% faster
+  > - Limited to 1 Runegraft of the Warp
+- Runegraft of the Fortress[^rune-fortress]
+  > - 10% reduced Attributes
+  > - 40% increased Global Defences
+  > - Limited to 1 Runegraft of the Fortress
+
+> Runegraft of the Fortress may require you to get an Attribute cluster if you
+> haven't. Though I believe it's worth the effort
+
 ## Changes to Auras/Buffs
 
 We revise the auras/buffs that is used. Some aren't "auras" but we just lump
@@ -902,6 +926,16 @@ need to anoint to get it anymore. We change our anoint to
 As The Mountain[^mountain] as mentioned in our
 [section for defenses](#swapping-suppress--glancing-blows-for-evasion--block-cap).
 
+## Corrupted Unique Implicits
+
+In particular, we usually try to find these 2 uniques with corrupted implicits:
+
+1. The Covenant[^covenant]:
+   - +# to SRS Gem or +# to all Support Gems
+2. Aegis[^aegis]:
+   - +#% Chance to Block
+   - Grants Level # Aura (To free a socket)
+
 ## Annex
 
 ### Instant Leech
@@ -928,6 +962,39 @@ For many end-game content, rarely these all are happening at the same time. Many
 cases I find myself dying mainly to 1-shots, or large DoTs and rarely my SRS are
 in combat all at the same time. Thus, much like how BG's PSRS drops the Leech
 Mastery, we recommend too.
+
+### 3.27 Foulborn United in Dream
+
+In 3.27, United in Dream[^united] received a Foulborn variant, which grants
+
+> - +(20~30)% to Quality of all Minion Skill Gems
+
+This is a significant boost to Spectre's survivability and SRS uptime.
+For SRS #/23 and 30% on the Foulborn roll, this means an additional 79% chance
+to summon an extra SRS.
+
+Redoing the calculation in
+[how often do we need to cast SRS](#how-often-do-you-need-to-cast-srs):
+
+If we are able to **cast SRS every second**, we'd summon on average
+$1.79 * (1 + \frac{1}{0.66}) \text{SRS}/s\approx4.5\text{SRS}/s$.
+Our SRS would live for base $5s$, extended to $(5 * 144\%)s=7.2s$
+with the Enduring Bond passive ring.
+Thus, if we held down SRS, we will be able to summon a peak of
+$4.5 \text{SRS}/s * 7.2s\approx32.4\text{SRS}$.
+
+This gives us even more lee-way with the foulborn variant, though we doubt this
+variant will continue to the next league.
+
+### 3.27 Minion Accuracy
+
+As of 3.27, Minion Accuracy was removed; i.e. minions are guaranteed to hit.
+This doesn't affect "blocking" by enemies, just that enemies can no longer
+evade.
+
+This gave us a huge advantage when selecting Ghastly[^ghastly] jewels, as
+previously, minion accuracy was a crucial yet overlooked mod when scouting.
+This change reduces the pool of mods we need to consider.
 
 ### Fun Fact: Original Sin doesn't help
 
@@ -996,6 +1063,8 @@ lower than 0%.
 [^redemption]: [Redemption](https://www.poewiki.net/wiki/Redemption)
 [^replica-sorrow]: [Replica Sorrow of the Divine](https://www.poewiki.net/wiki/Replica_Sorrow_of_the_Divine)
 [^rongokurais]: [Rongokurai's Boon](https://www.poewiki.net/wiki/Rongokurai%27s_Boon)
+[^rune-warp]: [Rongokurai's Boon](https://www.poewiki.net/wiki/Runegraft_of_the_Warp)
+[^rune-fortress]: [Rongokurai's Boon](https://www.poewiki.net/wiki/Runegraft_of_the_Fortress)
 [^sacrifice]: [Sacrifice](https://www.poewiki.net/wiki/Sacrifice)
 [^safeguard]: [Safeguard](https://www.poewiki.net/wiki/Safeguard)
 [^shaper]: [Shaper](https://www.poewiki.net/wiki/Shaper)
