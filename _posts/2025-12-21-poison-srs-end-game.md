@@ -84,7 +84,7 @@ As a bird's eye comparison with BG's PSRS, these are the significant changes.
 | Category             | BG's PSRS                                               | Our PSRS                                                      | Notes                                                  |
 |----------------------|---------------------------------------------------------|---------------------------------------------------------------|--------------------------------------------------------|
 | Investment           | 5 ~ 50+D (*)                                            | 30 ~ 50D                                                      | It's not clear on BG's investment for end-game.        |
-| DPS (Uber)           | 18M                                                     | 35M                                                            | Non-Uber hits the DoT cap, which isn't representative  |
+| DPS (Uber)           | 18M                                                     | 33M (No Sulphur Flask)/35M                                    | Non-Uber hits the DoT cap, which isn't representative  |
 | EHP (No Flask/Flask) | 71K/114K                                                | 317K/465K                                                     | BG's uses Progenesis while we didn't                   |
 | Keystones            | Eldritch Battery, Mind over Matter, Glancing Blows      | None                                                          |                                                        |
 | Block                | Capped with Glancing Blows                              | Capped                                                        |                                                        |
